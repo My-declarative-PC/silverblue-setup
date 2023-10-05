@@ -28,6 +28,26 @@ RUN rpm-ostree install \
     vim \
     zoxide
 
+FROM rust:latest AS lsd_builder
+RUN apt-get update && apt-get install -y git
+RUN cargo install --git https://github.com/lsd-rs/lsd.git --branch master
+
+FROM fedora:latest AS fastfetch_builder
+RUN dnf -y update
+RUN dnf install -y git cmake pkgconf-pkg-config
+RUN dnf group install -y "C Development Tools and Libraries" "Development Tools"
+WORKDIR /tmp
+RUN git clone -b master https://github.com/fastfetch-cli/fastfetch.git && \
+    cd fastfetch && \
+    mkdir -p build && \
+    cd build && \
+    cmake .. && \
+    cmake --build . --target fastfetch --target flashfetch
+
+FROM base
+COPY --from=lsd_builder /usr/local/cargo/bin/lsd /usr/bin/lsd
+COPY --from=fastfetch_builder /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
+
 RUN rm -rf /var/lib/unbound
 
 RUN ostree container commit
