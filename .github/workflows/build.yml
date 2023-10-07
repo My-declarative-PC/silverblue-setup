@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "jmarrero-silverblue"
+  IMAGE_NAME: "silverblue-setup"
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
@@ -37,4 +37,6 @@ jobs:
           tags: "latest"
           registry: ${{ env.IMAGE_REGISTRY }}
           username: ${{ env.REGISTRY_USER }}
+          extra-args: |
+            --disable-content-trust
           password: ${{ env.REGISTRY_PASSWORD }}
