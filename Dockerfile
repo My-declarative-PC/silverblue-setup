@@ -1,6 +1,6 @@
-ARG FEDORA_VERSION="${FEDORA_VERSION:-39}"
+ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_VERSION} AS base
-ARG FEDORA_VERSION="${FEDORA_VERSION:-39}"
+ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
@@ -32,7 +32,8 @@ FROM rust:latest AS lsd_builder
 RUN apt-get update && apt-get install -y git
 RUN cargo install --git https://github.com/lsd-rs/lsd.git --branch master
 
-FROM fedora:latest AS fastfetch_builder
+ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
+FROM fedora:${FEDORA_VERSION} AS fastfetch_builder
 RUN dnf -y update
 RUN dnf install -y git cmake pkgconf-pkg-config
 RUN dnf group install -y "C Development Tools and Libraries" "Development Tools"
