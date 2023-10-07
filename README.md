@@ -3,7 +3,7 @@ This is my current silverblue setup using OSTree Native Container.
 This builds the ./Dockerfile with podman.
 
 They are pushed to:
-`ghcr.io/jmarrero/jmarrero-silverblue:latest`
+`ghcr.io/imperatormarsa/silverblue-setup:latest`
 
 The base image I use currently comes from:
 https://github.com/cgwalters/sync-fedora-ostree-containers
