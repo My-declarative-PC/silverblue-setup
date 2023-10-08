@@ -6,16 +6,22 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
 
 RUN rpm-ostree install \
-    btop \
-    fastfetch \
-    fish \
-    fzf \
+    # Shell Extensions \
     gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-caffeine \
     gnome-shell-extension-freon \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-pop-shell \
     gnome-shell-extension-pop-shell-shortcut-overrides \
+    # Fonts \
+    jetbrains-mono-fonts \
+    jetbrains-mono-nl-fonts \
+    jetbrains-mono-fonts-all \
+    # Other \
+    btop \
+    fastfetch \
+    fish \
+    fzf \
     lsd \
     neovim \
     nodejs \
