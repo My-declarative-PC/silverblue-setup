@@ -5,34 +5,10 @@ ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
 
-RUN rpm-ostree install \
-    # Shell Extensions \
-    gnome-shell-extension-blur-my-shell \
-    gnome-shell-extension-caffeine \
-    gnome-shell-extension-freon \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-pop-shell \
-    gnome-shell-extension-pop-shell-shortcut-overrides \
-    # Fonts \
-    jetbrains-mono-fonts \
-    jetbrains-mono-nl-fonts \
-    jetbrains-mono-fonts-all \
-    # Other \
-    btop \
-    fastfetch \
-    fish \
-    fzf \
-    lsd \
-    neovim \
-    nodejs \
-    nodejs-npm \
-    podman \
-    python3-neovim \
-    ripgrep \
-    starship \
-    tmux \
-    vim \
-    zoxide
+COPY src/install-dependences.sh /tmp/install-dependences.sh
+RUN chmod +x /tmp/install-dependences.sh && \
+    /tmp/install-dependences.sh && \
+    rm -rf /tmp/*
 
 FROM rust:latest AS lsd_builder
 RUN apt-get update && apt-get install -y git
