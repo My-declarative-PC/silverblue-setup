@@ -11,22 +11,11 @@ RUN chmod +x /tmp/install-dependences.sh && \
     /tmp/install-dependences.sh && \
     rm -rf /tmp/*
 
-ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
-FROM fedora:${FEDORA_VERSION} AS fastfetch_builder
-RUN dnf -y update
-RUN dnf install -y git cmake pkgconf-pkg-config
-RUN dnf group install -y "C Development Tools and Libraries" "Development Tools"
-WORKDIR /tmp
-RUN git clone -b master https://github.com/fastfetch-cli/fastfetch.git && \
-    cd fastfetch && \
-    mkdir -p build && \
-    cd build && \
-    cmake .. && \
-    cmake --build . --target fastfetch --target flashfetch
-
 FROM base
-COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest /usr/local/cargo/bin/lsd /usr/bin/lsd
-COPY --from=fastfetch_builder /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
+COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
+    /usr/local/cargo/bin/lsd /usr/bin/lsd
+COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
+    /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
 RUN rm -rf /var/lib/unbound
 
