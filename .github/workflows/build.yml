@@ -30,7 +30,7 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "lsd_builder"
+          context: "."
           containerfiles: "Dockerfile.lsd_builder"
           image: lsd_builder
           layers: false
