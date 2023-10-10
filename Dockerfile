@@ -10,10 +10,6 @@ RUN chmod +x /tmp/install-dependences.sh && \
     /tmp/install-dependences.sh && \
     rm -rf /tmp/*
 
-FROM rust:latest AS lsd_builder
-RUN apt-get update && apt-get install -y git
-RUN cargo install --git https://github.com/lsd-rs/lsd.git --branch master
-
 ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
 FROM fedora:${FEDORA_VERSION} AS fastfetch_builder
 RUN dnf -y update
@@ -28,7 +24,7 @@ RUN git clone -b master https://github.com/fastfetch-cli/fastfetch.git && \
     cmake --build . --target fastfetch --target flashfetch
 
 FROM base
-COPY --from=lsd_builder /usr/local/cargo/bin/lsd /usr/bin/lsd
+COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest /usr/local/cargo/bin/lsd /usr/bin/lsd
 COPY --from=fastfetch_builder /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
 RUN rm -rf /var/lib/unbound
