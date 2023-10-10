@@ -15,6 +15,16 @@ rpm-ostree install \
     jetbrains-mono-nl-fonts \
     jetbrains-mono-fonts-all
 
+# Kernel Cachy Bore
+rpm-ostree override remove \
+    kernel \
+    kernel-core \
+    kernel-modules \
+    kernel-modules-core \
+    kernel-modules-extra \
+    --install \
+    kernel-cachyos-bore
+
 # Other
 rpm-ostree install \
     btop \

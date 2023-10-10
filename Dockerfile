@@ -4,6 +4,7 @@ ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
+RUN curl -L https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-${FEDORA_VERSION}/bieszczaders-kernel-cachyos-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/cachyos.copr.repo
 
 COPY src/install-dependences.sh /tmp/install-dependences.sh
 RUN chmod +x /tmp/install-dependences.sh && \
