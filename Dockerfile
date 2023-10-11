@@ -9,15 +9,15 @@ COPY src/install-dependences.sh /tmp/install-dependences.sh
 RUN chmod +x /tmp/install-dependences.sh && \
     /tmp/install-dependences.sh
 
+COPY src/setup-dotfiles.sh /tmp/setup-dotfiles.sh
+RUN chmod +x /tmp/setup-dotfile.sh && \
+    /tmp/setup-dotfile.sh
+
 FROM base
 COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
     /usr/local/cargo/bin/lsd /usr/bin/lsd
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
-
-COPY src/setup-dotfiles.sh /tmp/setup-dotfiles.sh
-RUN chmod +x /tmp/setup-dotfile.sh && \
-    /tmp/setup-dotfile.sh
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/*
