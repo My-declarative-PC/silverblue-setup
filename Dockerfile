@@ -9,8 +9,8 @@ RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod +x /tmp/docker_src/install-dependences.sh && \
     /tmp/docker_src/install-dependences.sh
-RUN chmod +x /tmp/docker_src/setup-dotfile.sh && \
-    /tmp/docker_src/setup-dotfile.sh
+RUN chmod +x /tmp/docker_src/setup-dotfiles.sh && \
+    /tmp/docker_src/setup-dotfiles.sh
 
 FROM base
 COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
