@@ -7,8 +7,7 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FE
 
 COPY src/install-dependences.sh /tmp/install-dependences.sh
 RUN chmod +x /tmp/install-dependences.sh && \
-    /tmp/install-dependences.sh && \
-    rm -rf /tmp/*
+    /tmp/install-dependences.sh
 
 FROM base
 COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
@@ -16,6 +15,11 @@ COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
-RUN rm -rf /var/lib/unbound
+COPY src/setuo-dotfiles.sh /tmp/setuo-dotfiles.sh
+RUN chmod +x /tmp/setuo-dotfile.sh && \
+    /tmp/setuo-dotfile.sh
+
+RUN rm -rf /var/lib/unbound \
+    rm -rf /tmp/*
 
 RUN ostree container commit
