@@ -18,10 +18,8 @@ rpm-ostree install \
 # Other
 rpm-ostree install \
     btop \
-    fastfetch \
     fish \
     fzf \
-    lsd \
     neovim \
     nodejs \
     gnome-tweaks \
@@ -32,4 +30,5 @@ rpm-ostree install \
     starship \
     tmux \
     vim \
+    wezterm \
     zoxide
