@@ -24,6 +24,7 @@ rpm-ostree install \
     lsd \
     neovim \
     nodejs \
+    ome-tweaks \
     nodejs-npm \
     podman \
     python3-neovim \
