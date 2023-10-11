@@ -15,9 +15,9 @@ COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
-COPY src/setuo-dotfiles.sh /tmp/setuo-dotfiles.sh
-RUN chmod +x /tmp/setuo-dotfile.sh && \
-    /tmp/setuo-dotfile.sh
+COPY src/setup-dotfiles.sh /tmp/setup-dotfiles.sh
+RUN chmod +x /tmp/setup-dotfile.sh && \
+    /tmp/setup-dotfile.sh
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/*
