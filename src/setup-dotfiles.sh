@@ -12,3 +12,6 @@ ln -s /etc/gits/dotfiles/vim/vimrc /etc/vimrc
 # link fish
 rm -rf /etc/fish
 ln -s /etc/gits/dotfiles/fish /etc/fish
+
+# starship setup
+mkdir -p /var/roothome/.cache/starship
