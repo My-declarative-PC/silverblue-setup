@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 # Shell Extensions
 rpm-ostree install \
