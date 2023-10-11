@@ -5,13 +5,12 @@ ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
 
-COPY src/install-dependences.sh /tmp/install-dependences.sh
-RUN chmod +x /tmp/install-dependences.sh && \
-    /tmp/install-dependences.sh
-
-COPY src/setup-dotfiles.sh /tmp/setup-dotfiles.sh
-RUN chmod +x /tmp/setup-dotfile.sh && \
-    /tmp/setup-dotfile.sh
+RUN mkdir -p /tmp/docker_src
+COPY src/* /tmp/docker_src/
+RUN chmod +x /tmp/docker_src/install-dependences.sh && \
+    /tmp/docker_src/install-dependences.sh
+RUN chmod +x /tmp/docker_src/setup-dotfile.sh && \
+    /tmp/docker_src/setup-dotfile.sh
 
 FROM base
 COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
