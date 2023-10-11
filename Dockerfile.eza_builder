@@ -1,0 +1,6 @@
+FROM rust:latest AS eza_builder
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/eza-community/eza.git && \
+    cd eza && \
+    cargo install --path .
+
