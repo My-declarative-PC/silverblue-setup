@@ -14,7 +14,7 @@ RUN chmod +x /tmp/docker_src/setup-dotfiles.sh && \
 
 FROM base
 COPY --from=ghcr.io/imperatormarsa/lsd_builder:latest \
-    /usr/local/cargo/bin/lsd /usr/bin/lsd
+    /usr/local/cargo/bin/eza /usr/bin/eza
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
