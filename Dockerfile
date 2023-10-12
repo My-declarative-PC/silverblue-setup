@@ -22,6 +22,7 @@ COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
 RUN gsettings set org.gnome.desktop.default-applications.terminal exec 'wezterm'
 
 RUN rm -rf /var/lib/unbound \
-    rm -rf /tmp/*
+    rm -rf /tmp/* \
+    rm -rf /var
 
 RUN ostree container commit
