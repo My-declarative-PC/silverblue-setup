@@ -12,8 +12,9 @@ RUN chmod +x /tmp/docker_src/install-dependences.sh && \
     /tmp/docker_src/install-dependences.sh
 RUN chmod +x /tmp/docker_src/setup-dotfiles.sh && \
     /tmp/docker_src/setup-dotfiles.sh
+RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
+    /tmp/docker_src/set-dracula-theme.sh
 
-FROM base
 COPY --from=ghcr.io/imperatormarsa/eza_builder:latest \
     /usr/local/cargo/bin/eza /usr/bin/eza
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
