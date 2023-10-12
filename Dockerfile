@@ -19,7 +19,7 @@ COPY --from=ghcr.io/imperatormarsa/eza_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
-RUN org.gnome.desktop.default-applications.terminal exec 'wezterm'
+# RUN org.gnome.desktop.default-applications.terminal exec 'wezterm'
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/*
