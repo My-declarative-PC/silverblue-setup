@@ -30,8 +30,8 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "."
-          containerfiles: "Dockerfile.fastfetch_builder"
+          context: "builders"
+          containerfiles: "Dockerfile.fastfetch"
           image: fastfetch_builder
           layers: false
           oci: true
@@ -64,8 +64,8 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "."
-          containerfiles: "Dockerfile.zellij_builder"
+          context: "builders"
+          containerfiles: "Dockerfile.zellij"
           image: zellij_builder
           layers: false
           oci: true
@@ -98,8 +98,8 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "."
-          containerfiles: "Dockerfile.eza_builder"
+          context: "builders"
+          containerfiles: "Dockerfile.eza"
           image: eza_builder
           layers: false
           oci: true
@@ -132,8 +132,8 @@ jobs:
       - name: Build container image
         uses: redhat-actions/buildah-build@v2
         with:
-          context: "."
-          containerfiles: "Dockerfile.lazygit_builder"
+          context: "builders"
+          containerfiles: "Dockerfile.lazygit"
           image: lazygit_builder
           layers: false
           oci: true

@@ -1,5 +1,5 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
-FROM fedora:${FEDORA_VERSION} AS fastfetch_builder
+FROM fedora:${FEDORA_VERSION}
 RUN dnf -y update
 RUN dnf install -y git cmake pkgconf-pkg-config
 RUN dnf group install -y "C Development Tools and Libraries" "Development Tools"
