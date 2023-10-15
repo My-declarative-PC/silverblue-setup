@@ -10,8 +10,6 @@ RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod +x /tmp/docker_src/install-dependences.sh && \
     /tmp/docker_src/install-dependences.sh
-RUN chmod +x /tmp/docker_src/setup-dotfiles.sh && \
-    /tmp/docker_src/setup-dotfiles.sh
 RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
     /tmp/docker_src/set-dracula-theme.sh
 
