@@ -20,12 +20,13 @@ rpm-ostree install \
     btop \
     fish \
     fzf \
+    gnome-tweaks \
+    lazygit \
+    make \
     neovim \
     nodejs \
-    gnome-tweaks \
     nodejs-npm \
     podman \
-    lazygit \
     python3-neovim \
     ripgrep \
     starship \
