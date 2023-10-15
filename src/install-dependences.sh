@@ -21,7 +21,6 @@ rpm-ostree install \
     fish \
     fzf \
     gnome-tweaks \
-    lazygit \
     make \
     neovim \
     nodejs \
