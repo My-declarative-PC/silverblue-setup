@@ -1,5 +1,6 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
-FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_VERSION} AS base
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
+FROM quay.io/fedora-ostree-desktops/${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 ARG FEDORA_VERSION="${FEDORA_VERSION:-38}"
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo

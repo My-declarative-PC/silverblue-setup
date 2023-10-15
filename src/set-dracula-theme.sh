@@ -20,3 +20,9 @@ unzip dracula_icon.zip
 mkdir -p /usr/share/icons
 mv Dracula /usr/share/icons/Dracula
 gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+
+# force flatpak use Dracula theme
+flatpak override --env=GTK_THEME=Dracula
+flatpak override --env=ICON_THEME=Dracula
+flatpak override --filesystem=/usr/share/icons/Dracula
+flatpak override --filesystem=/usr/share/themes/Dracula

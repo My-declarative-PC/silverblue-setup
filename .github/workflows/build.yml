@@ -115,7 +115,7 @@ jobs:
           extra-args: |
             --disable-content-trust
 
-  podman-build:
+  build_silverblue:
     needs: 
       - eza_builder
       - zellij_builder
@@ -140,6 +140,9 @@ jobs:
           context: "."
           containerfiles: Dockerfile
           image: ${{ env.IMAGE_NAME }}
+          build-args: |
+            FEDORA_VERSION=38
+            SOURCE_IMAGE=silverblue
           layers: false
           oci: true
 
