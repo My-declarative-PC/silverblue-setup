@@ -193,3 +193,45 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           extra-args: |
             --disable-content-trust
+
+  build_wsl:
+    needs:
+      - eza_builder
+      - zellij_builder
+      - lazygit_builder
+      - fastfetch_builder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
+
+      # Build image using Buildah action
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: "."
+          containerfiles: Dockerfile.wsl
+          image: wsl
+          layers: false
+          oci: true
+
+      # Push the image to GHCR (Image Registry)
+      - name: Push To GHCR
+        uses: redhat-actions/push-to-registry@v2
+        id: push
+        with:
+          image: wsl
+          tags: "latest"
+          registry: ${{ steps.registry_case.outputs.lowercase }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
