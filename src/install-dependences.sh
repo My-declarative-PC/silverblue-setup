@@ -7,6 +7,7 @@ rpm-ostree install \
     gnome-shell-extension-freon \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-pop-shell \
+    gnome-shell-extension-forge \
     gnome-shell-extension-pop-shell-shortcut-overrides
 
 # Fonts
