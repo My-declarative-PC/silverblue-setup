@@ -34,3 +34,5 @@ rpm-ostree install \
     vim \
     wezterm \
     zoxide
+
+flatpak install flathub org.keepassxc.KeePassXC
