@@ -27,8 +27,6 @@ COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/lazygit_builder:latest \
     /go/bin/lazygit /usr/bin/lazygit
 
-RUN gsettings set org.gnome.desktop.default-applications.terminal exec 'wezterm'
-
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
