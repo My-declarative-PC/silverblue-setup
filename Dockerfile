@@ -9,14 +9,14 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/r
 
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
-RUN chmod +x /tmp/docker_src/install-dependences.sh && \
-    /tmp/docker_src/install-dependences.sh
+RUN chmod +x /tmp/docker_src/instal-gnome-shell-extensions.sh && \
+    /tmp/docker_src/instal-gnome-shell-extensions.sh
 RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
     /tmp/docker_src/set-dracula-theme.sh
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
     /tmp/docker_src/set-fonts.sh
-# RUN chmod +x /tmp/docker_src/instal-gnome-shell-extensions.sh && \
-#     /tmp/docker_src/instal-gnome-shell-extensions.sh
+RUN chmod +x /tmp/docker_src/install-dependences.sh && \
+    /tmp/docker_src/install-dependences.sh
 
 COPY --from=ghcr.io/imperatormarsa/zellij_builder:latest \
     /usr/local/cargo/bin/zellij /usr/bin/zellij
