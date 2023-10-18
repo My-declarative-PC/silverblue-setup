@@ -4,7 +4,6 @@
 rpm-ostree install \
     gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-caffeine \
-    gnome-shell-extension-freon \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-pop-shell \
     gnome-shell-extension-forge \
@@ -29,6 +28,8 @@ rpm-ostree install \
     podman \
     python3-neovim \
     ripgrep \
+    libgtop2-devel \
+    lm_sensors \
     starship \
     tmux \
     vim \
