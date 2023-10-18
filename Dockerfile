@@ -15,8 +15,8 @@ RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
     /tmp/docker_src/set-dracula-theme.sh
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
     /tmp/docker_src/set-fonts.sh
-RUN chmod +x /tmp/docker_src/instal-gnome-shell-extensions.sh && \
-    /tmp/docker_src/instal-gnome-shell-extensions.sh
+# RUN chmod +x /tmp/docker_src/instal-gnome-shell-extensions.sh && \
+#     /tmp/docker_src/instal-gnome-shell-extensions.sh
 
 COPY --from=ghcr.io/imperatormarsa/zellij_builder:latest \
     /usr/local/cargo/bin/zellij /usr/bin/zellij
