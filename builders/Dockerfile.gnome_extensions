@@ -1,4 +1,4 @@
-FROM rust:latestFROM greyltc/archlinux-aur:yay
+FROM greyltc/archlinux-aur:yay
 
 RUN yay -Suuy
 
