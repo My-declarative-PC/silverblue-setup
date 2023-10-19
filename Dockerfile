@@ -9,8 +9,6 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/r
 
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
-RUN chmod +x /tmp/docker_src/instal-gnome-shell-extensions.sh && \
-    /tmp/docker_src/instal-gnome-shell-extensions.sh
 RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
     /tmp/docker_src/set-dracula-theme.sh
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
@@ -26,6 +24,8 @@ COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 COPY --from=ghcr.io/imperatormarsa/lazygit_builder:latest \
     /go/bin/lazygit /usr/bin/lazygit
+COPY --from=ghcr.io/imperatormarsa/gnome_extensions_builder:latest \
+    /usr/share/gnome-shell/extensions/* /usr/share/gnome-shell/extensions/
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
