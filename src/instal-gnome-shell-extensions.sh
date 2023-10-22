@@ -1,5 +1,6 @@
 #! /bin/bash
 
+mkdir -p /var/roothome/.cache
 mkdir -p /tmp/gnome_extensions
 
 ### Vitas
