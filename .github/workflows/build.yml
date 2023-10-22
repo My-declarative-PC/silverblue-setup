@@ -13,148 +13,148 @@ env:
   REGISTRY_PASSWORD: ${{ github.token }}
 
 jobs:
-  #__# fastfetch_builder:
-  #__#   runs-on: ubuntu-latest
-  #__#   steps:
-  #__#     - name: Checkout repo
-  #__#       uses: actions/checkout@v3
+  fastfetch_builder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  #__#     # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-  #__#     # https://github.com/macbre/push-to-ghcr/issues/12
-  #__#     - name: Lowercase Registry
-  #__#       id: registry_case
-  #__#       uses: ASzc/change-string-case-action@v5
-  #__#       with:
-  #__#         string: ${{ env.IMAGE_REGISTRY }}
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
 
-  #__#     - name: Build container image
-  #__#       uses: redhat-actions/buildah-build@v2
-  #__#       with:
-  #__#         context: "builders"
-  #__#         containerfiles: "builders/Dockerfile.fastfetch"
-  #__#         image: fastfetch_builder
-  #__#         layers: false
-  #__#         oci: true
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: "builders"
+          containerfiles: "builders/Dockerfile.fastfetch"
+          image: fastfetch_builder
+          layers: false
+          oci: true
 
-  #__#     - name: Push to ghcr.io
-  #__#       uses: redhat-actions/push-to-registry@v2
-  #__#       with:
-  #__#         image: fastfetch_builder
-  #__#         tags: "latest"
-  #__#         registry: ${{ steps.registry_case.outputs.lowercase }}
-  #__#         username: ${{ env.REGISTRY_USER }}
-  #__#         password: ${{ env.REGISTRY_PASSWORD }}
-  #__#         extra-args: |
-  #__#           --disable-content-trust
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: fastfetch_builder
+          tags: "latest"
+          registry: ${{ steps.registry_case.outputs.lowercase }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
 
-  #__# zellij_builder:
-  #__#   runs-on: ubuntu-latest
-  #__#   steps:
-  #__#     - name: Checkout repo
-  #__#       uses: actions/checkout@v3
+  zellij_builder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  #__#     # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-  #__#     # https://github.com/macbre/push-to-ghcr/issues/12
-  #__#     - name: Lowercase Registry
-  #__#       id: registry_case
-  #__#       uses: ASzc/change-string-case-action@v5
-  #__#       with:
-  #__#         string: ${{ env.IMAGE_REGISTRY }}
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
 
-  #__#     - name: Build container image
-  #__#       uses: redhat-actions/buildah-build@v2
-  #__#       with:
-  #__#         context: "builders"
-  #__#         containerfiles: "builders/Dockerfile.zellij"
-  #__#         image: zellij_builder
-  #__#         layers: false
-  #__#         oci: true
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: "builders"
+          containerfiles: "builders/Dockerfile.zellij"
+          image: zellij_builder
+          layers: false
+          oci: true
 
-  #__#     - name: Push to ghcr.io
-  #__#       uses: redhat-actions/push-to-registry@v2
-  #__#       with:
-  #__#         image: zellij_builder
-  #__#         tags: "latest"
-  #__#         registry: ${{ steps.registry_case.outputs.lowercase }}
-  #__#         username: ${{ env.REGISTRY_USER }}
-  #__#         password: ${{ env.REGISTRY_PASSWORD }}
-  #__#         extra-args: |
-  #__#           --disable-content-trust
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: zellij_builder
+          tags: "latest"
+          registry: ${{ steps.registry_case.outputs.lowercase }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
 
-  #__# eza_builder:
-  #__#   runs-on: ubuntu-latest
-  #__#   steps:
-  #__#     - name: Checkout repo
-  #__#       uses: actions/checkout@v3
+  eza_builder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  #__#     # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-  #__#     # https://github.com/macbre/push-to-ghcr/issues/12
-  #__#     - name: Lowercase Registry
-  #__#       id: registry_case
-  #__#       uses: ASzc/change-string-case-action@v5
-  #__#       with:
-  #__#         string: ${{ env.IMAGE_REGISTRY }}
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
 
-  #__#     - name: Build container image
-  #__#       uses: redhat-actions/buildah-build@v2
-  #__#       with:
-  #__#         context: "builders"
-  #__#         containerfiles: "builders/Dockerfile.eza"
-  #__#         image: eza_builder
-  #__#         layers: false
-  #__#         oci: true
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: "builders"
+          containerfiles: "builders/Dockerfile.eza"
+          image: eza_builder
+          layers: false
+          oci: true
 
-  #__#     - name: Push to ghcr.io
-  #__#       uses: redhat-actions/push-to-registry@v2
-  #__#       with:
-  #__#         image: eza_builder
-  #__#         tags: "latest"
-  #__#         registry: ${{ steps.registry_case.outputs.lowercase }}
-  #__#         username: ${{ env.REGISTRY_USER }}
-  #__#         password: ${{ env.REGISTRY_PASSWORD }}
-  #__#         extra-args: |
-  #__#           --disable-content-trust
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: eza_builder
+          tags: "latest"
+          registry: ${{ steps.registry_case.outputs.lowercase }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
 
-  #__# lazygit_builder:
-  #__#   runs-on: ubuntu-latest
-  #__#   steps:
-  #__#     - name: Checkout repo
-  #__#       uses: actions/checkout@v3
+  lazygit_builder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-  #__#     # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-  #__#     # https://github.com/macbre/push-to-ghcr/issues/12
-  #__#     - name: Lowercase Registry
-  #__#       id: registry_case
-  #__#       uses: ASzc/change-string-case-action@v5
-  #__#       with:
-  #__#         string: ${{ env.IMAGE_REGISTRY }}
+      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+      # https://github.com/macbre/push-to-ghcr/issues/12
+      - name: Lowercase Registry
+        id: registry_case
+        uses: ASzc/change-string-case-action@v5
+        with:
+          string: ${{ env.IMAGE_REGISTRY }}
 
-  #__#     - name: Build container image
-  #__#       uses: redhat-actions/buildah-build@v2
-  #__#       with:
-  #__#         context: "builders"
-  #__#         containerfiles: "builders/Dockerfile.lazygit"
-  #__#         image: lazygit_builder
-  #__#         layers: false
-  #__#         oci: true
+      - name: Build container image
+        uses: redhat-actions/buildah-build@v2
+        with:
+          context: "builders"
+          containerfiles: "builders/Dockerfile.lazygit"
+          image: lazygit_builder
+          layers: false
+          oci: true
 
-  #__#     - name: Push to ghcr.io
-  #__#       uses: redhat-actions/push-to-registry@v2
-  #__#       with:
-  #__#         image: lazygit_builder
-  #__#         tags: "latest"
-  #__#         registry: ${{ steps.registry_case.outputs.lowercase }}
-  #__#         username: ${{ env.REGISTRY_USER }}
-  #__#         password: ${{ env.REGISTRY_PASSWORD }}
-  #__#         extra-args: |
-  #__#           --disable-content-trust
+      - name: Push to ghcr.io
+        uses: redhat-actions/push-to-registry@v2
+        with:
+          image: lazygit_builder
+          tags: "latest"
+          registry: ${{ steps.registry_case.outputs.lowercase }}
+          username: ${{ env.REGISTRY_USER }}
+          password: ${{ env.REGISTRY_PASSWORD }}
+          extra-args: |
+            --disable-content-trust
 
   build_silverblue:
-    #__# needs:
-    #__#   - eza_builder
-    #__#   - zellij_builder
-    #__#   - lazygit_builder
-    #__#   - fastfetch_builder
+    needs:
+      - eza_builder
+      - zellij_builder
+      - lazygit_builder
+      - fastfetch_builder
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
