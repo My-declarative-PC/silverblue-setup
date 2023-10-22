@@ -12,6 +12,7 @@ env:
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
 
+jobs:
   fastfetch_builder:
     runs-on: ubuntu-latest
     steps:
