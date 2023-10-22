@@ -4,9 +4,7 @@
 rpm-ostree install \
     gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-caffeine \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-pop-shell \
-    gnome-shell-extension-pop-shell-shortcut-overrides
+    gnome-shell-extension-gsconnect
 
 # Fonts
 rpm-ostree install \
