@@ -25,12 +25,6 @@ COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/lazygit_builder:latest \
     /go/bin/lazygit /usr/bin/lazygit
 
-RUN mkdir -p /usr/share/gnome-shell/extensions
-COPY --from=ghcr.io/imperatormarsa/gnome_extensions_builder:latest \
-    /usr/share/gnome-shell/extensions/forge@jmmaranan.com /usr/share/gnome-shell/extensions/forge@jmmaranan.com
-COPY --from=ghcr.io/imperatormarsa/gnome_extensions_builder:latest \
-    /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com /usr/share/gnome-shell/extensions/Vitals@CoreCoding.com
-
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
