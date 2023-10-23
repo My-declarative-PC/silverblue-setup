@@ -47,39 +47,39 @@ jobs:
           extra-args: |
             --disable-content-trust
 
-  zellij_builder:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+  # zellij_builder:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repo
+  #       uses: actions/checkout@v3
 
-      # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
-      # https://github.com/macbre/push-to-ghcr/issues/12
-      - name: Lowercase Registry
-        id: registry_case
-        uses: ASzc/change-string-case-action@v5
-        with:
-          string: ${{ env.IMAGE_REGISTRY }}
+  #     # Workaround bug where capital letters in your GitHub username make it impossible to push to GHCR.
+  #     # https://github.com/macbre/push-to-ghcr/issues/12
+  #     - name: Lowercase Registry
+  #       id: registry_case
+  #       uses: ASzc/change-string-case-action@v5
+  #       with:
+  #         string: ${{ env.IMAGE_REGISTRY }}
 
-      - name: Build container image
-        uses: redhat-actions/buildah-build@v2
-        with:
-          context: "builders"
-          containerfiles: "builders/Dockerfile.zellij"
-          image: zellij_builder
-          layers: false
-          oci: true
+  #     - name: Build container image
+  #       uses: redhat-actions/buildah-build@v2
+  #       with:
+  #         context: "builders"
+  #         containerfiles: "builders/Dockerfile.zellij"
+  #         image: zellij_builder
+  #         layers: false
+  #         oci: true
 
-      - name: Push to ghcr.io
-        uses: redhat-actions/push-to-registry@v2
-        with:
-          image: zellij_builder
-          tags: "latest"
-          registry: ${{ steps.registry_case.outputs.lowercase }}
-          username: ${{ env.REGISTRY_USER }}
-          password: ${{ env.REGISTRY_PASSWORD }}
-          extra-args: |
-            --disable-content-trust
+  #     - name: Push to ghcr.io
+  #       uses: redhat-actions/push-to-registry@v2
+  #       with:
+  #         image: zellij_builder
+  #         tags: "latest"
+  #         registry: ${{ steps.registry_case.outputs.lowercase }}
+  #         username: ${{ env.REGISTRY_USER }}
+  #         password: ${{ env.REGISTRY_PASSWORD }}
+  #         extra-args: |
+  #           --disable-content-trust
 
   eza_builder:
     runs-on: ubuntu-latest
@@ -152,7 +152,7 @@ jobs:
   build_silverblue:
     needs:
       - eza_builder
-      - zellij_builder
+      # - zellij_builder
       - lazygit_builder
       - fastfetch_builder
     runs-on: ubuntu-latest
