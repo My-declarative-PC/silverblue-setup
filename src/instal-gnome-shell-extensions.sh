@@ -26,4 +26,3 @@ gnome-extensions install -f /tmp/gnome_extensions/forge/forgejmmaranan.com.v75.s
 /root/.local/share/gnome-shell/extensions/forge@jmmaranan.com /usr/share/gnome-shell/extensions/forge@jmmaranan.com
 #####################################################################################################################################
 
--
