@@ -22,16 +22,10 @@ rpm-ostree install \
     gpaste \
     gpaste-applet \
     gpaste-ui \
-    fzf \
     gnome-tweaks \
-    make \
-    neovim \
-    nodejs \
-    nodejs-npm \
     podman \
     NetworkManager-libnm-devel \
     gnome-system-monitor \
-    python3-neovim \
     ripgrep \
     libgtop2-devel \
     lm_sensors \

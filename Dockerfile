@@ -16,8 +16,6 @@ RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
     /tmp/docker_src/set-fonts.sh
 
-COPY --from=ghcr.io/imperatormarsa/zellij_builder:latest \
-    /usr/local/cargo/bin/zellij /usr/bin/zellij
 COPY --from=ghcr.io/imperatormarsa/eza_builder:latest \
     /usr/local/cargo/bin/eza /usr/bin/eza
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
