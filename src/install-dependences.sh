@@ -4,7 +4,10 @@
 rpm-ostree install \
     gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-caffeine \
-    gnome-shell-extension-gsconnect
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-system-monitor-applet \
+    gnome-shell-extension-forge \
+
 
 # Fonts
 rpm-ostree install \
@@ -16,6 +19,9 @@ rpm-ostree install \
 rpm-ostree install \
     btop \
     fish \
+    gpaste \
+    gpaste-applet \
+    gpaste-ui \
     fzf \
     gnome-tweaks \
     make \
@@ -23,6 +29,8 @@ rpm-ostree install \
     nodejs \
     nodejs-npm \
     podman \
+    NetworkManager-libnm-devel \
+    gnome-system-monitor \
     python3-neovim \
     ripgrep \
     libgtop2-devel \
