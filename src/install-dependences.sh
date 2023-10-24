@@ -20,7 +20,6 @@ rpm-ostree install \
     btop \
     fish \
     gpaste \
-    gpaste-applet \
     gpaste-ui \
     gnome-tweaks \
     podman \
