@@ -118,7 +118,6 @@ jobs:
   build_silverblue:
     needs:
       - eza_builder
-      # - zellij_builder
       - lazygit_builder
       - fastfetch_builder
     runs-on: ubuntu-latest
@@ -142,7 +141,7 @@ jobs:
           containerfiles: Dockerfile
           image: ${{ env.IMAGE_NAME }}
           build-args: |
-            FEDORA_VERSION=39
+            FEDORA_VERSION=rawhide
             SOURCE_IMAGE=silverblue
           layers: false
           oci: true
