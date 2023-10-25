@@ -2,10 +2,18 @@
 
 install_packages() {
     local packages=("$@")
-    
+
     for package in "${packages[@]}"; do
         if ! rpm-ostree status "${package}" &> /dev/null; then
-            echo "Warning: Package '${package}' not found in repository."
+            formatedPackName="«${package}»"
+            printf "\n"
+            printf "+-----------------------------+\n"
+            printf "|           WARNING           |\n"
+            printf "+-----------------------------+\n"
+            printf "| Package %-19s |\n" "${formatedPackName}"
+            printf "| not found in repository.    |\n"
+            printf "+-----------------------------+\n"
+            printf "\n"
         else
             rpm-ostree install "${package}"
         fi
