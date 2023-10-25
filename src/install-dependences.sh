@@ -21,17 +21,14 @@ install_packages() {
 }
 
 # Shell Extensions
-packages=( \
-    "gnome-shell-extension-blur-my-shell" \
-    "gnome-shell-extension-caffeine" \
-    "gnome-shell-extension-gsconnect" \
-    "gnome-shell-extension-system-monitor-applet" \
-    "gnome-shell-extension-gpaste" \
-    "gnome-shell-extension-bubblemail" \
-    "gnome-shell-extension-forge" \
-    "gnome-shell-extension-forge2" \
-)
-install_packages "${packages[@]}"
+rpm-ostree install \
+    gnome-shell-extension-blur-my-shell \
+    gnome-shell-extension-caffeine \
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-system-monitor-applet \
+    gnome-shell-extension-gpaste \
+    gnome-shell-extension-bubblemail \
+    gnome-shell-extension-forge
 
 # Fonts
 rpm-ostree install \
