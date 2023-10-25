@@ -8,7 +8,6 @@ rpm-ostree install \
     gnome-shell-extension-system-monitor-applet \
     gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
-    pop-gnome-shell-theme \
     gnome-shell-extension-forge
 
 # Fonts
@@ -35,5 +34,4 @@ rpm-ostree install \
     tmux \
     vim \
     wezterm \
-    pop-gtk-theme \
     zoxide
