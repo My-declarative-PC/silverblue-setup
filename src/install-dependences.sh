@@ -4,7 +4,7 @@ install_packages() {
     local packages=("$@")
 
     for package in "${packages[@]}"; do
-        if rpm-ostree db list | grep -q "$package"; then
+        if rpm-ostree search $package | grep -q "$package"; then
             rpm-ostree install "${package}"
         else
             formatedPackName="«${package}»"
@@ -21,14 +21,29 @@ install_packages() {
 }
 
 # Shell Extensions
-rpm-ostree install \
-    gnome-shell-extension-blur-my-shell \
-    gnome-shell-extension-caffeine \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-system-monitor-applet \
-    gnome-shell-extension-gpaste \
-    gnome-shell-extension-bubblemail \
-    gnome-shell-extension-forge
+packages=( \
+    "gnome-shell-extension-blur-my-shell" \
+    "gnome-shell-extension-caffeine" \
+    "gnome-shell-extension-gsconnect" \
+    "gnome-shell-extension-system-monitor-applet" \
+    "gnome-shell-extension-gpaste" \
+    "gnome-shell-extension-bubblemail" \
+    "gnome-shell-extension-forge" \
+    "gnome-shell-extension-freon" \
+    "gnome-shell-extension-freon2" \
+)
+install_packages $packages
+
+# pop theme
+packages=( \
+    "pop-gnome-shell-theme" \
+    "pop-gtk2-theme" \
+    "pop-gtk3-theme" \
+    "pop-gtk4-theme" \
+    "pop-icon-theme" \
+    "pop-sound-theme" \
+)
+install_packages $packages
 
 # Fonts
 rpm-ostree install \
