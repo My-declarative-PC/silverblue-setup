@@ -4,7 +4,9 @@ install_packages() {
     local packages=("$@")
 
     for package in "${packages[@]}"; do
-        if ! rpm-ostree status "${package}" &> /dev/null; then
+        if rpm-ostree db list | grep -q "$package"; then
+            rpm-ostree install "${package}"
+        else
             formatedPackName="«${package}»"
             printf "\n"
             printf "+-----------------------------+\n"
@@ -14,8 +16,6 @@ install_packages() {
             printf "| not found in repository.    |\n"
             printf "+-----------------------------+\n"
             printf "\n"
-        else
-            rpm-ostree install "${package}"
         fi
     done
 }
