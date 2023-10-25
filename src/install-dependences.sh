@@ -6,8 +6,7 @@ rpm-ostree install \
     gnome-shell-extension-caffeine \
     gnome-shell-extension-gsconnect \
     gnome-shell-extension-system-monitor-applet \
-    gnome-shell-extension-forge \
-
+    gnome-shell-extension-forge
 
 # Fonts
 rpm-ostree install \
