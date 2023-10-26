@@ -9,16 +9,9 @@ rpm-ostree install \
     gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
     gnome-shell-extension-forge \
-    gnome-shell-extension-freon
+    gnome-shell-extension-freon \
+    gnome-shell-extension-user-theme
 
-# pop theme
-rpm-ostree install \
-    pop-gnome-shell-theme \
-    pop-gtk2-theme \
-    pop-gtk3-theme \
-    pop-gtk4-theme \
-    pop-icon-theme \
-    pop-sound-theme
 
 # Fonts
 rpm-ostree install \
