@@ -1,49 +1,24 @@
 #! /bin/bash
 
-install_packages() {
-    local packages=("$@")
-
-    for package in "${packages[@]}"; do
-        if rpm-ostree search $package | grep -q "$package"; then
-            rpm-ostree install "${package}"
-        else
-            formatedPackName="«${package}»"
-            printf "\n"
-            printf "+-----------------------------+\n"
-            printf "|           WARNING           |\n"
-            printf "+-----------------------------+\n"
-            printf "| Package %-19s |\n" "${formatedPackName}"
-            printf "| not found in repository.    |\n"
-            printf "+-----------------------------+\n"
-            printf "\n"
-        fi
-    done
-}
-
 # Shell Extensions
-packages=( \
-    "gnome-shell-extension-blur-my-shell" \
-    "gnome-shell-extension-caffeine" \
-    "gnome-shell-extension-gsconnect" \
-    "gnome-shell-extension-system-monitor-applet" \
-    "gnome-shell-extension-gpaste" \
-    "gnome-shell-extension-bubblemail" \
-    "gnome-shell-extension-forge" \
-    "gnome-shell-extension-freon" \
-    "gnome-shell-extension-freon2" \
-)
-install_packages $packages
+rpm-ostree install \
+    gnome-shell-extension-blur-my-shell \
+    gnome-shell-extension-caffeine \
+    gnome-shell-extension-gsconnect \
+    gnome-shell-extension-system-monitor-applet \
+    gnome-shell-extension-gpaste \
+    gnome-shell-extension-bubblemail \
+    gnome-shell-extension-forge \
+    gnome-shell-extension-freon
 
 # pop theme
-packages=( \
-    "pop-gnome-shell-theme" \
-    "pop-gtk2-theme" \
-    "pop-gtk3-theme" \
-    "pop-gtk4-theme" \
-    "pop-icon-theme" \
-    "pop-sound-theme" \
-)
-install_packages $packages
+rpm-ostree install \
+    pop-gnome-shell-theme \
+    pop-gtk2-theme \
+    pop-gtk3-theme \
+    pop-gtk4-theme \
+    pop-icon-theme \
+    pop-sound-theme
 
 # Fonts
 rpm-ostree install \
