@@ -8,8 +8,8 @@ rpm-ostree install \
     gnome-shell-extension-system-monitor-applet \
     gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
-    gnome-shell-extension-freon \
     gnome-shell-extension-user-theme
+    # gnome-shell-extension-freon \
     # gnome-shell-extension-forge \
 
 
@@ -36,5 +36,6 @@ rpm-ostree install \
     starship \
     tmux \
     vim \
+    helix \
     wezterm \
     zoxide

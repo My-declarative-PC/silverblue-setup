@@ -1,11 +1,11 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-39}"
-ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
-FROM quay.io/fedora-ostree-desktops/${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
+FROM ghcr.io/ublue-os/bluefin-dx:${FEDORA_VERSION} AS base
 ARG FEDORA_VERSION="${FEDORA_VERSION:-39}"
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/zoxide.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo
+RUN curl -L https://copr.fedorainfracloud.org/coprs/flekz/helix-git/repo/fedora-${FEDORA_VERSION}/flekz-helix-git-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/helix.copr.repo
 
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
