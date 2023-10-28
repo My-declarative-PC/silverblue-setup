@@ -23,6 +23,8 @@ rpm-ostree install \
 rpm-ostree install \
     btop \
     fish \
+    gping \
+    lazygit \
     gpaste \
     gpaste-ui \
     gnome-tweaks \

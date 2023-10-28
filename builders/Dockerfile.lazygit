@@ -1,2 +1,0 @@
-FROM golang:1.21
-RUN go install github.com/jesseduffield/lazygit@latest
