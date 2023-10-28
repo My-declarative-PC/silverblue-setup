@@ -36,6 +36,5 @@ rpm-ostree install \
     starship \
     tmux \
     vim \
-    helix \
     wezterm \
     zoxide
