@@ -8,6 +8,8 @@ rpm-ostree install \
     gnome-shell-extension-system-monitor-applet \
     gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
+    gnome-shell-extension-pop-shell \
+    gnome-shell-extension-pop-shell-shortcut-overrides \
     gnome-shell-extension-user-theme
     # gnome-shell-extension-freon \
     # gnome-shell-extension-forge \
