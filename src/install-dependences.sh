@@ -11,8 +11,6 @@ rpm-ostree install \
     gnome-shell-extension-pop-shell \
     gnome-shell-extension-pop-shell-shortcut-overrides \
     gnome-shell-extension-user-theme
-    # gnome-shell-extension-freon \
-    # gnome-shell-extension-forge \
 
 
 # Fonts
