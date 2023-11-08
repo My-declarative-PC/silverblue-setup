@@ -106,7 +106,7 @@ jobs:
           containerfiles: Dockerfile
           image: ${{ env.IMAGE_NAME }}
           build-args: |
-            FEDORA_VERSION=latest
+            FEDORA_VERSION=39
             SOURCE_IMAGE=silverblue
           layers: false
           oci: true
