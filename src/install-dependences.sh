@@ -14,10 +14,7 @@ rpm-ostree install \
 
 
 # Fonts
-rpm-ostree install \
-    jetbrains-mono-fonts \
-    jetbrains-mono-nl-fonts \
-    jetbrains-mono-fonts-all
+rpm-ostree install fira-code-fonts
 
 # Other
 rpm-ostree install \
@@ -32,6 +29,7 @@ rpm-ostree install \
     podman \
     NetworkManager-libnm-devel \
     gnome-system-monitor \
+    gnome-themes-extra \
     ripgrep \
     libgtop2-devel \
     lm_sensors \
@@ -39,4 +37,5 @@ rpm-ostree install \
     tmux \
     vim \
     wezterm \
+    papirus-icon-theme \
     zoxide

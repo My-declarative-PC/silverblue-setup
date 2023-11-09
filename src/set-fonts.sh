@@ -1,10 +1,10 @@
 #! /bin/bash
 
 mkdir -p /tmp/fonts_jetbrain
-cd /tmp/fonts_jetbrains
+cd /tmp/fonts_FiraCode
 
-wget -O jetbrains.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
-unzip jetbrains.zip
+wget -O FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip FiraCode.zip
 
-mkdir -p /usr/share/fonts/JetBrainsMono
-mv *.ttf /usr/share/fonts/JetBrainsMono
+mkdir -p /usr/share/fonts/FiraCode
+mv *.ttf /usr/share/fonts/FiraCode
