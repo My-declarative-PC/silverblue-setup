@@ -12,8 +12,8 @@ RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod +x /tmp/docker_src/install-dependences.sh && \
     /tmp/docker_src/install-dependences.sh
-RUN chmod +x /tmp/docker_src/set-dracula-theme.sh && \
-    /tmp/docker_src/set-dracula-theme.sh
+RUN chmod +x /tmp/docker_src/set-theme.sh && \
+    /tmp/docker_src/set-theme.sh
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
     /tmp/docker_src/set-fonts.sh
 
