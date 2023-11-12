@@ -1,5 +1,5 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
-ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverbluesilverblue}"
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
