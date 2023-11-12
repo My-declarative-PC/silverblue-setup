@@ -1,5 +1,6 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
-FROM ghcr.io/ublue-os/bluefin-dx:${FEDORA_VERSION} AS base
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverbluesilverblue}"
+FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo
