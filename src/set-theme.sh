@@ -27,3 +27,14 @@ cd /tmp/gtk_theme
 unzip cursors.zip
 # setup cursors
 cp -r Catppuccin-Mocha-${THONE}-Cursors /usr/share/icons
+
+# download sddm-theme
+mkdir /tmp/theme_sddm
+cd    /tmp/theme_sddm
+git clone https://github.com/catppuccin/sddm.git
+# set sddm-theme
+mkdir -p /usr/share/sddm/themes
+mkdir -p /etc/sddm.conf.d
+cp src/catppuccin-mocha /usr/share/sddm/themes/
+touch /etc/sddm.conf.d/theme.conf
+echo  '[Theme]\nCurrent=catppuccin-flavour' > /etc/sddm.conf.d/theme.conf

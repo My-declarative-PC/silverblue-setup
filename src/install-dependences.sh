@@ -34,6 +34,9 @@ rpm-ostree install \
     nodejs-bash-language-server \
     papirus-icon-theme \
     podman \
+    qt5-qtgraphicaleffects \
+    qt5-qtquickcontrols2 \
+    qt5-qtsvg \
     ripgrep \
     sddm \
     sddm-themes \
