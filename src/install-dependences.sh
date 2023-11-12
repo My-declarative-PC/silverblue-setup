@@ -19,23 +19,25 @@ rpm-ostree install fira-code-fonts
 # Other
 rpm-ostree install \
     btop \
-    fish \
-    gping \
-    lazygit \
-    gpaste \
-    gpaste-ui \
-    gnome-tweaks \
     bubblemail \
-    podman \
-    NetworkManager-libnm-devel \
+    fish \
     gnome-system-monitor \
     gnome-themes-extra \
-    ripgrep \
+    gnome-tweaks \
+    gpaste \
+    gpaste-ui \
+    gping \
+    lazygit \
     libgtop2-devel \
     lm_sensors \
+    NetworkManager-libnm-devel \
+    nodejs-bash-language-server \
+    papirus-icon-theme \
+    podman \
+    ripgrep \
     starship \
     tmux \
     vim \
     wezterm \
-    papirus-icon-theme \
     zoxide
+
