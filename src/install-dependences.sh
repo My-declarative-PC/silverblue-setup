@@ -35,6 +35,9 @@ rpm-ostree install \
     papirus-icon-theme \
     podman \
     ripgrep \
+    sddm \
+    sddm-themes \
+    sddm-x11 \
     starship \
     tmux \
     vim \

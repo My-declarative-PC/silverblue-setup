@@ -23,6 +23,8 @@ COPY --from=ghcr.io/imperatormarsa/eza_builder:latest \
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
     /tmp/fastfetch/build/fastfetch /usr/bin/fastfetch
 
+RUN systemctl disable gdm.service && \
+    systemctl enable  sddm.service
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
