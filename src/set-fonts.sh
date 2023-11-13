@@ -3,8 +3,8 @@
 mkdir -p /tmp/fonts_jetbrain
 cd /tmp/fonts_FiraCode
 
-wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip -O /tmp/fonts_FiraCode/FiraCode.zip 
-unzip /tmp/fonts_FiraCode/FiraCode.zip
+wget -O FiraCode.zip https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.zip
+unzip FiraCode.zip
 
-mkdir -p /usr/share/fonts/fira-code
-mv *.ttf /usr/share/fonts/fira-code
+mkdir -p /usr/share/fonts/FiraCode
+mv *.ttf /usr/share/fonts/FiraCode
