@@ -18,6 +18,9 @@ RUN chmod +x /tmp/docker_src/set-theme.sh && \
 RUN chmod +x /tmp/docker_src/set-fonts.sh && \
     /tmp/docker_src/set-fonts.sh
 
+RUN wget https://raw.githubusercontent.com/ImperatorMarsa/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
+    cat /tmp/bashrc_base >> /etc/bashrc
+
 COPY --from=ghcr.io/imperatormarsa/eza_builder:latest \
     /usr/local/cargo/bin/eza /usr/bin/eza
 COPY --from=ghcr.io/imperatormarsa/fastfetch_builder:latest \
