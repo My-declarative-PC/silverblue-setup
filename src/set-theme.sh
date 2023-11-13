@@ -38,6 +38,6 @@ mkdir -p /usr/share/sddm/themes
 cp -r sddm/src/catppuccin-mocha /usr/share/sddm/themes/
 # touch /etc/sddm.conf.d/theme.conf
 # echo  '[Theme]
-# Current=catppuccin-flavour' > /etc/sddm.conf.d/theme.conf
+# Current=catppuccin-mocha' > /etc/sddm.conf.d/theme.conf
 echo '[Theme]
-Current=catppuccin-flavour' >> /etc/sddm.conf
+Current=catppuccin-mocha' >> /etc/sddm.conf
