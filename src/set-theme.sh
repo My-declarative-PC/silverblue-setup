@@ -35,7 +35,7 @@ git clone https://github.com/catppuccin/sddm.git
 # set sddm-theme
 mkdir -p /usr/share/sddm/themes
 mkdir -p /etc/sddm.conf.d
-cp src/catppuccin-mocha /usr/share/sddm/themes/
+cp -r sddm/src/catppuccin-mocha /usr/share/sddm/themes/
 touch /etc/sddm.conf.d/theme.conf
 echo  '[Theme]
 Current=catppuccin-flavour' > /etc/sddm.conf.d/theme.conf
