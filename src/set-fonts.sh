@@ -7,4 +7,4 @@ wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.z
 unzip /tmp/fonts_FiraCode/FiraCode.zip
 
 mkdir -p /usr/share/fonts/fira-code
-mv /tmp/fonts_FiraCode/*.ttf /usr/share/fonts/fira-code
+mv *.ttf /usr/share/fonts/fira-code
