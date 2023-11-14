@@ -1,5 +1,6 @@
 #! /bin/bash
 
+### Packeges
 # Shell Extensions
 rpm-ostree install \
     gnome-shell-extension-blur-my-shell \
@@ -8,10 +9,9 @@ rpm-ostree install \
     gnome-shell-extension-system-monitor-applet \
     gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
-    gnome-shell-extension-pop-shell \
     gnome-shell-extension-pop-shell-shortcut-overrides \
     gnome-shell-extension-user-theme
-
+    # gnome-shell-extension-pop-shell \
 
 # Fonts
 rpm-ostree install fira-code-fonts
@@ -47,3 +47,11 @@ rpm-ostree install \
     wezterm \
     zoxide
 
+### Build Pop-Shell
+# download
+mkdir -p /tmp/pop_shell
+cd pop_shell
+git clone -b master_mantic https://github.com/pop-os/shell.git shell
+# setup
+cd shell
+make local-install
