@@ -3,6 +3,8 @@ ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
+WORKDIR /tmp/npm_workdir
+
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/starship.copr.repo
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-${FEDORA_VERSION}/atim-lazygit-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/lazygit.copr.repo
