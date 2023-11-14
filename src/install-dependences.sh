@@ -79,6 +79,7 @@ mv eza /usr/bin
 
 ### Build Pop-Shell
 # dependencies
+mkdir -p /var/roothome/.npm
 rpm-ostree install \
     nodejs \
     npm
