@@ -49,10 +49,19 @@ rpm-ostree install \
     zoxide
 
 ### Build Pop-Shell
+# dependencies
+rpm-ostree install \
+    nodejs \
+    npm
+npm install typescript@latest
 # download
 mkdir -p /tmp/pop_shell
-cd pop_shell
+cd /tmp/pop_shell
 git clone -b master_mantic https://github.com/pop-os/shell.git shell
 # setup
 cd shell
 make local-install
+# clean up
+rpm-ostree install \
+    nodejs \
+    npm
