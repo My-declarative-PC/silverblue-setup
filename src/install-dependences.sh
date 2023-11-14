@@ -89,7 +89,11 @@ cd /tmp/pop_shell
 git clone -b master_mantic https://github.com/pop-os/shell.git shell
 # setup
 cd shell
+DESTDIR=/tmp/compile_pop_shell
+mkdir -p $DESTDIR
 make local-install
+cd $DESTDIR
+cp -r usr/* /usr/
 # clean up
 rpm-ostree install \
     nodejs \
