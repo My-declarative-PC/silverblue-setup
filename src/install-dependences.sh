@@ -24,12 +24,13 @@ rpm-ostree install \
     gnome-system-monitor \
     gnome-themes-extra \
     gnome-tweaks \
-    gpaste \
     gpaste-ui \
+    gpaste \
     gping \
     lazygit \
     libgtop2-devel \
     lm_sensors \
+    make \
     NetworkManager-libnm-devel \
     nodejs-bash-language-server \
     papirus-icon-theme \
@@ -38,9 +39,9 @@ rpm-ostree install \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
     ripgrep \
-    sddm \
     sddm-themes \
     sddm-x11 \
+    sddm \
     starship \
     tmux \
     vim \
