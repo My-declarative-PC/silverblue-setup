@@ -78,5 +78,5 @@ rm *gz
 mv eza /usr/bin
 
 ### Build Pop-Shell
-cmod +x install-dependences/pop_shell.sh
-./install-dependences/pop_shell.sh
+cmod +x /tmp/docker_src/install-dependences/pop_shell.sh
+/tmp/docker_src/install-dependences/pop_shell.sh
