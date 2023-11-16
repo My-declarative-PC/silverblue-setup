@@ -50,33 +50,11 @@ rpm-ostree install \
 
 ### From release
 # dust
-mkdir -p /tmp/dust
-cd /tmp/dust
-wget https://api.github.com/repos/bootandy/dust/tags
-VERSION=$(cat tags | grep name | head -1 | sed 's/.*"\(v.*\)".*/\1/g')
-wget https://github.com/bootandy/dust/releases/download/${VERSION}/dust-${VERSION}-x86_64-unknown-linux-gnu.tar.gz -O dust.tar.gz
-tar -xf dust.tar.gz
-rm *gz
-cd du*
-mv dust /usr/bin
+/tmp/docker_src/install-dependences--dust.sh
 # fastfetch
-mkdir -p /tmp/fastfetch
-cd /tmp/fastfetch
-wget https://api.github.com/repos/fastfetch-cli/fastfetch/tags
-VERSION=$(cat tags | grep name | grep -e '"[0-9]' | head -1 | sed 's/.*"\([0-9]\+\.[0-9]\+\.[0-9]\+\)".*/\1/g')
-wget https://github.com/fastfetch-cli/fastfetch/releases/download/${VERSION}/fastfetch-${VERSION}-Linux.tar.gz -O fastfetch.tar.gz
-tar -xf fastfetch.tar.gz
-rm *gz
-cd fast*
-cp -r usr/* /usr/
+/tmp/docker_src/install-dependences--fastfetch.sh
 # eza
-mkdir -p /tmp/eza
-cd /tmp/eza
-wget https://github.com/eza-community/eza/releases/latest/download/eza_x86_64-unknown-linux-gnu.tar.gz -O eza.tar.gz
-tar -xf eza.tar.gz
-rm *gz
-mv eza /usr/bin
+/tmp/docker_src/install-dependences--eza.sh
 
 ### Build Pop-Shell
-cmod +x /tmp/docker_src/install-dependences--pop_shell.sh
 /tmp/docker_src/install-dependences--pop_shell.sh
