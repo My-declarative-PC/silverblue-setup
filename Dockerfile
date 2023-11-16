@@ -27,4 +27,5 @@ RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
 
+RUN rpm-ostree cleanup
 RUN ostree container commit
