@@ -39,9 +39,6 @@ rpm-ostree install \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
     ripgrep \
-    sddm-themes \
-    sddm-x11 \
-    sddm \
     starship \
     tmux \
     vim \

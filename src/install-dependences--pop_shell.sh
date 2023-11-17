@@ -23,6 +23,6 @@ cd $DESTDIR
 cp -r usr/* /usr/
 
 # clean up
-rpm-ostree install \
+rpm-ostree uninstall \
     nodejs \
     npm

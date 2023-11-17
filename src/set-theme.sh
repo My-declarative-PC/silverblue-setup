@@ -31,15 +31,12 @@ unzip cursors.zip
 # setup
 cp -r Catppuccin-Mocha-${THONE}-Cursors /usr/share/icons
 
-### Display manager (SDDM)
-# download
-mkdir -p /tmp/theme_sddm
-cd /tmp/theme_sddm
-git clone https://github.com/catppuccin/sddm.git
+### Display manager (GDM)
+# dependencies
+rpm-ostree install glib2-devel
 # setup
-mkdir -p /usr/share/sddm/themes
-mkdir -p /etc/sddm.conf.d
-cp -r sddm/src/catppuccin-mocha /usr/share/sddm/themes/
-touch /etc/sddm.conf.d/theme.conf
-echo  '[Theme]
-Current=catppuccin-mocha' > /etc/sddm.conf.d/theme.conf
+THEME_NAME="$(gsettings get org.gnome.desktop.interface gtk-theme | sed "s/'//g")"
+THEME_SRC_DIR="/usr/share/themes/$THEME_NAME/gnome-shell"
+glib-compile-resources --target="/usr/share/gnome-shell/gnome-shell-theme.gresource" --sourcedir="$THEME_SRC_DIR" "$THEME_SRC_DIR/gnome-shell-theme.gresource.xml"
+# cleanup
+rpm-ostree uninstall glib2-devel
