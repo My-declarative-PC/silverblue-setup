@@ -13,10 +13,10 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FED
 
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
-RUN chmod -R +x /tmp/docker_src/* && \
-    /tmp/docker_src/install-dependences.sh && \
-    /tmp/docker_src/set-theme.sh && \
-    /tmp/docker_src/set-fonts.sh
+RUN chmod -R +x /tmp/docker_src/*
+RUN /tmp/docker_src/install-dependences.sh
+RUN /tmp/docker_src/set-theme.sh
+RUN /tmp/docker_src/set-fonts.sh
 
 RUN wget https://raw.githubusercontent.com/ImperatorMarsa/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
