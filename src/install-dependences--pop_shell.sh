@@ -21,8 +21,3 @@ sed -i '1s/^/DESTDIR = \/tmp\/compile_pop_shell\n\n/' Makefile
 make depcheck && make compile && make install
 cd $DESTDIR
 cp -r usr/* /usr/
-
-# clean up
-rpm-ostree uninstall \
-    nodejs \
-    npm
