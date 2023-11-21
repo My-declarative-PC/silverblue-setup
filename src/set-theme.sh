@@ -37,6 +37,8 @@ rpm-ostree install glib2-devel
 # setup
 THEME_NAME=Catppuccin
 THEME_SRC_DIR="/usr/share/themes/$THEME_NAME/gnome-shell"
+
+wget https://raw.githubusercontent.com/braheezy/catppuccin-gtk-rpm/master/gnome-shell-theme.gresource.xml -O $THEME_SRC_DIR/gnome-shell-theme.gresource.xml
 glib-compile-resources --target="/usr/share/gnome-shell/gnome-shell-theme.gresource" --sourcedir="$THEME_SRC_DIR" "$THEME_SRC_DIR/gnome-shell-theme.gresource.xml"
 # cleanup
 rpm-ostree uninstall glib2-devel
