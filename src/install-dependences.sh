@@ -53,6 +53,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--fastfetch.sh
 # eza
 /tmp/docker_src/install-dependences--eza.sh
+# pano
+/tmp/docker_src/install-dependences--pano.sh
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
