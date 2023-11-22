@@ -6,8 +6,6 @@ rpm-ostree install \
     gnome-shell-extension-blur-my-shell \
     gnome-shell-extension-caffeine \
     gnome-shell-extension-gsconnect \
-    gnome-shell-extension-system-monitor-applet \
-    gnome-shell-extension-gpaste \
     gnome-shell-extension-bubblemail \
     gnome-shell-extension-pop-shell-shortcut-overrides \
     gnome-shell-extension-user-theme
@@ -24,8 +22,6 @@ rpm-ostree install \
     gnome-system-monitor \
     gnome-themes-extra \
     gnome-tweaks \
-    gpaste-ui \
-    gpaste \
     gping \
     lazygit \
     libgtop2-devel \
@@ -55,6 +51,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--eza.sh
 # pano
 /tmp/docker_src/install-dependences--pano.sh
+# vitals
+/tmp/docker_src/install-dependences--vitals.sh
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
