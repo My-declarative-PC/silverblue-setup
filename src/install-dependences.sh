@@ -42,6 +42,7 @@ rpm-ostree install \
     starship \
     tmux \
     vim \
+    waydroid \
     wezterm \
     zoxide
 
