@@ -24,6 +24,8 @@ rpm-ostree install \
     gnome-tweaks \
     gping \
     lazygit \
+    libgda-sqlite \
+    libgda \
     libgtop2-devel \
     lm_sensors \
     make \
