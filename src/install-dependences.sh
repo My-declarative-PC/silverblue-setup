@@ -33,6 +33,7 @@ rpm-ostree install \
     nodejs-bash-language-server \
     papirus-icon-theme \
     podman \
+    timeshift \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
