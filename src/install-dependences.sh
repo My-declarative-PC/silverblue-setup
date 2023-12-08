@@ -9,7 +9,6 @@ rpm-ostree install \
     gnome-shell-extension-bubblemail \
     gnome-shell-extension-pop-shell-shortcut-overrides \
     gnome-shell-extension-user-theme
-    # gnome-shell-extension-pop-shell \
 
 # Fonts
 rpm-ostree install fira-code-fonts
@@ -32,7 +31,10 @@ rpm-ostree install \
     lm_sensors \
     make \
     NetworkManager-libnm-devel \
+    NetworkManager-openvpn-gnome \
+    NetworkManager-openvpn \
     nodejs-bash-language-server \
+    openvpn \
     papirus-icon-theme \
     podman \
     qt5-qtgraphicaleffects \
