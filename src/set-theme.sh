@@ -1,7 +1,7 @@
 #! /bin/bash
 
 mkdir -p /tmp/gtk_theme
-THONE=Lavender
+THONE=Mauve
 
 ### GTK
 # download

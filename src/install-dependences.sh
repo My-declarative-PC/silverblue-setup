@@ -18,6 +18,8 @@ rpm-ostree install fira-code-fonts
 rpm-ostree install \
     btop \
     bubblemail \
+    distrobox \
+    docker \
     fish \
     gnome-system-monitor \
     gnome-themes-extra \
@@ -33,12 +35,12 @@ rpm-ostree install \
     nodejs-bash-language-server \
     papirus-icon-theme \
     podman \
-    timeshift \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
     ripgrep \
     starship \
+    timeshift \
     tmux \
     vim \
     waydroid \
