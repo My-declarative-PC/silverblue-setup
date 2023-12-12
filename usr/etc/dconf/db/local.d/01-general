@@ -1,0 +1,19 @@
+[org/gnome/shell]
+favorite-apps = ['org.wezfurlong.wezterm.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop']
+enabled-extensions = ['bubblemail@razer.framagit.org', 'caffeine@patapon.info', 'gsconnect@andyholmes.github.io', 'pano@elhan.io', 'pop-shell@system76.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'Vitals@CoreCoding.com', 'blur-my-shell@aunetx']
+
+[org/gnome/desktop/interface]
+cursor-theme="Catppuccin-Mocha-Mauve-Cursors"
+icon-theme="Papirus-Dark"
+shell-theme="Catppuccin"
+gtk-theme="Catppuccin"
+font-antialiasing="rgba"
+
+[org/gnome/desktop/wm/preferences]
+button-layout=":minimize,maximize,close"
+num-workspaces='10'
+
+[org/gnome/software]
+allow-updates=false
+download-updates=false
+download-updates-notify=false
