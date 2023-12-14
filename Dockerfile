@@ -1,9 +1,9 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
-#FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
-FROM ghcr.io/ublue-os/bluefin-dx AS base
+FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
+COPY usr /usr
 WORKDIR /tmp/npm_workdir
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo
@@ -24,7 +24,6 @@ RUN systemctl enable waydroid-container
 RUN wget https://raw.githubusercontent.com/ImperatorMarsa/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
 
-COPY usr /usr
 RUN systemctl enable dconf-update.service
 
 RUN rm -rf /var/lib/unbound \
