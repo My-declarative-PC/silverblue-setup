@@ -33,17 +33,3 @@ move-to-workspace-7=['<Shift><Super>7']
 move-to-workspace-8=['<Shift><Super>8']
 move-to-workspace-9=['<Shift><Super>9']
 move-to-workspace-10=['<Shift><Super>0']
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>Enter'
-command='org.wezfurlong.wezterm.desktop'
-name='WezTerm'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>w'
-command='firefox.desktop'
-name='FierFox'
-
-[org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', 'org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-home=['<Super>e']
