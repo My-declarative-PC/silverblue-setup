@@ -1,0 +1,3 @@
+[org/gnome/shell/extensions/vitals]
+position-in-panel=0
+hot-sensors=['_processor_usage_', '_memory_allocated_', '__temperature_avg__']
