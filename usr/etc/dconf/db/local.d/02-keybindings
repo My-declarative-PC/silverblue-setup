@@ -1,3 +1,14 @@
+[org/gnome/settings-daemon/plugins/media-keys]
+www=['<Super>w']
+email=@as []
+home=['<Super>e']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='wezterm'
+name='WezTerm'
+
 [org/gnome/shell/extensions/pop-shell]
 tile-enter=['<Super>r']
 
