@@ -21,13 +21,14 @@ RUN /tmp/docker_src/set-fonts.sh
 
 RUN systemctl enable waydroid-container
 
-RUN wget https://raw.githubusercontent.com/ImperatorMarsa/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
+RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
 
+RUN systemctl enable rpm-ostreed-automatic.timer
 RUN systemctl enable dconf-update.service
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
 
-RUN ostree container commit
+RUN rpm-ostree cleanup -m && ostree container commit
