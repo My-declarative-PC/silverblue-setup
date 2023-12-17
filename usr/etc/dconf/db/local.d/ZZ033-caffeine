@@ -1,0 +1,5 @@
+[org/gnome/shell/extensions/caffeine]
+indicator-position-max=2
+screen-blank='always'
+toggle-state=true
+user-enabled=false
