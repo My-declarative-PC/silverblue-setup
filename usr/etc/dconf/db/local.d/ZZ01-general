@@ -12,7 +12,7 @@ font-antialiasing="rgba"
 
 [org/gnome/desktop/wm/preferences]
 button-layout=":minimize,maximize,close"
-num-workspaces='10'
+num-workspaces=10
 
 [org/gnome/software]
 allow-updates=false
