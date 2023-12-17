@@ -20,4 +20,4 @@ download-updates=false
 download-updates-notify=false
 
 [org/gnome/mutter]
-dynamic-workspaces=true
+dynamic-workspaces=false
