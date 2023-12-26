@@ -67,3 +67,6 @@ rpm-ostree install \
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
+
+# install 'Timse New Roman'
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
