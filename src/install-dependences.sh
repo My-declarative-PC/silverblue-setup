@@ -15,24 +15,27 @@ rpm-ostree install fira-code-fonts
 
 # Other
 rpm-ostree install \
+    NetworkManager-libnm-devel \
+    NetworkManager-openvpn \
+    NetworkManager-openvpn-gnome \
     btop \
     bubblemail \
+    cabextract \
+    curl \
     distrobox \
     docker \
     fish \
+    fontconfig \
     gnome-system-monitor \
     gnome-themes-extra \
     gnome-tweaks \
     gping \
     lazygit \
-    libgda-sqlite \
     libgda \
+    libgda-sqlite \
     libgtop2-devel \
     lm_sensors \
     make \
-    NetworkManager-libnm-devel \
-    NetworkManager-openvpn-gnome \
-    NetworkManager-openvpn \
     nodejs-bash-language-server \
     openvpn \
     papirus-icon-theme \
@@ -47,6 +50,7 @@ rpm-ostree install \
     vim \
     waydroid \
     wezterm \
+    xorg-x11-font-utils \
     zoxide
 
 ### From release
@@ -63,3 +67,6 @@ rpm-ostree install \
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
+
+# install 'Timse New Roman'
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
