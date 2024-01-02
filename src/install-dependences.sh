@@ -23,8 +23,6 @@ rpm-ostree install \
     cabextract \
     curl \
     distrobox \
-    docker \
-    docker-compose \
     fish \
     fontconfig \
     gnome-system-monitor \
@@ -41,6 +39,7 @@ rpm-ostree install \
     openvpn \
     papirus-icon-theme \
     podman \
+    podman-docker \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
@@ -53,6 +52,26 @@ rpm-ostree install \
     wezterm \
     xorg-x11-font-utils \
     zoxide
+
+# Docker
+rpm-ostree uninstall \
+    docker \
+    docker-client \
+    docker-client-latest \
+    docker-common \
+    docker-latest \
+    docker-latest-logrotate \
+    docker-logrotate \
+    docker-selinux \
+    docker-engine-selinux \
+    docker-engine
+
+rpm-ostree install \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io \
+    docker-buildx-plugin \
+    docker-compose-plugin
 
 ### From release
 # dust
