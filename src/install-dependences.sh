@@ -54,18 +54,6 @@ rpm-ostree install \
     zoxide
 
 # Docker
-rpm-ostree uninstall \
-    docker \
-    docker-client \
-    docker-client-latest \
-    docker-common \
-    docker-latest \
-    docker-latest-logrotate \
-    docker-logrotate \
-    docker-selinux \
-    docker-engine-selinux \
-    docker-engine
-
 rpm-ostree install \
     docker-ce \
     docker-ce-cli \
