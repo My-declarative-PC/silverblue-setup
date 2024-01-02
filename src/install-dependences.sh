@@ -24,6 +24,7 @@ rpm-ostree install \
     curl \
     distrobox \
     docker \
+    docker-compose \
     fish \
     fontconfig \
     gnome-system-monitor \
