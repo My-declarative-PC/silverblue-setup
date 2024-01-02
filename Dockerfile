@@ -26,7 +26,7 @@ RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/
 RUN systemctl enable rpm-ostreed-automatic.timer
 RUN systemctl enable dconf-update.service
 RUN systemctl enable waydroid-container
-RUN systemctl enable docker
+RUN systemctl start  docker
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
