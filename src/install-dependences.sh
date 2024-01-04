@@ -39,7 +39,6 @@ rpm-ostree install \
     openvpn \
     papirus-icon-theme \
     podman \
-    podman-docker \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
