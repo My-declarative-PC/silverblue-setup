@@ -47,10 +47,10 @@ rpm-ostree install \
     timeshift \
     tmux \
     vim \
-    waydroid \
     wezterm \
     xorg-x11-font-utils \
     zoxide
+    # waydroid \
 
 # Docker
 rpm-ostree install \
