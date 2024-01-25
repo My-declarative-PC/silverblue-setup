@@ -71,6 +71,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--pano.sh
 # vitals
 /tmp/docker_src/install-dependences--vitals.sh
+# nushell
+/tmp/docker_src/install-dependences--nushell.sh
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
