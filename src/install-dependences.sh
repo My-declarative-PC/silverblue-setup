@@ -49,6 +49,7 @@ rpm-ostree install \
     vim \
     wezterm \
     xorg-x11-font-utils \
+    qemu-kvm \
     zoxide
     # waydroid \
 
