@@ -70,6 +70,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--eza.sh
 # pano
 /tmp/docker_src/install-dependences--pano.sh
+# astra-monitor
+/tmp/docker_src/install-dependences--astra-monitor.sh
 # vitals
 /tmp/docker_src/install-dependences--vitals.sh
 # nushell
