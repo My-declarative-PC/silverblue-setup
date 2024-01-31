@@ -15,9 +15,8 @@ rpm-ostree install fira-code-fonts
 
 # Other
 rpm-ostree install \
-    NetworkManager-libnm-devel \
-    NetworkManager-openvpn \
-    NetworkManager-openvpn-gnome \
+    bluez-tools \
+    bluez \
     btop \
     bubblemail \
     cabextract \
@@ -30,15 +29,20 @@ rpm-ostree install \
     gnome-tweaks \
     gping \
     lazygit \
-    libgda \
     libgda-sqlite \
+    libgda \
     libgtop2-devel \
     lm_sensors \
     make \
+    NetworkManager-libnm-devel \
+    NetworkManager-openvpn-gnome \
+    NetworkManager-openvpn \
     nodejs-bash-language-server \
     openvpn \
     papirus-icon-theme \
     podman \
+    qemu-kvm \
+    qemu-img \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
@@ -49,7 +53,6 @@ rpm-ostree install \
     vim \
     wezterm \
     xorg-x11-font-utils \
-    qemu-kvm \
     zoxide
     # waydroid \
 
@@ -72,8 +75,6 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--pano.sh
 # astra-monitor
 /tmp/docker_src/install-dependences--astra-monitor.sh
-# vitals
-/tmp/docker_src/install-dependences--vitals.sh
 # nushell
 /tmp/docker_src/install-dependences--nushell.sh
 
