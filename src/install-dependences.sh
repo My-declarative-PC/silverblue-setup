@@ -75,6 +75,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--pano.sh
 # astra-monitor
 /tmp/docker_src/install-dependences--astra-monitor.sh
+# Bluetooth-Battery-Meter
+/tmp/docker_src/install-dependences--Bluetooth-Battery-Meter.sh
 # nushell
 /tmp/docker_src/install-dependences--nushell.sh
 
