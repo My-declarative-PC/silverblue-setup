@@ -13,6 +13,9 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FE
 RUN curl -L https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FEDORA_VERSION}/atim-gping-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/gping.copr.repo
 RUN curl -L https://download.docker.com/linux/fedora/docker-ce.repo > /etc/yum.repos.d/docker.copr.repo
 
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
+RUN rpm -ivh /ublue-os-update-services.noarch.rpm
+
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod -R +x /tmp/docker_src/*
