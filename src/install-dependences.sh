@@ -71,6 +71,8 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--fastfetch.sh
 # eza
 /tmp/docker_src/install-dependences--eza.sh
+# yazi
+/tmp/docker_src/install-dependences--yazi.sh
 # pano
 /tmp/docker_src/install-dependences--pano.sh
 # astra-monitor
