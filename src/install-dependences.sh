@@ -64,23 +64,25 @@ rpm-ostree install \
     docker-buildx-plugin \
     docker-compose-plugin
 
-### From release
-# dust
-/tmp/docker_src/install-dependences--dust.sh
-# fastfetch
-/tmp/docker_src/install-dependences--fastfetch.sh
+### Packeges from release
 # eza
 /tmp/docker_src/install-dependences--eza.sh
+# dust
+/tmp/docker_src/install-dependences--dust.sh
 # yazi
 /tmp/docker_src/install-dependences--yazi.sh
+# nushell
+/tmp/docker_src/install-dependences--nushell.sh
+# fastfetch
+/tmp/docker_src/install-dependences--fastfetch.sh
+
+### GNOME extensions from release
 # pano
 /tmp/docker_src/install-dependences--pano.sh
 # astra-monitor
 /tmp/docker_src/install-dependences--astra-monitor.sh
 # Bluetooth-Battery-Meter
 /tmp/docker_src/install-dependences--Bluetooth-Battery-Meter.sh
-# nushell
-/tmp/docker_src/install-dependences--nushell.sh
 
 ### Build Pop-Shell
 /tmp/docker_src/install-dependences--pop_shell.sh
