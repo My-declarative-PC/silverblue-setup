@@ -22,11 +22,13 @@ on:
   schedule:
     - cron: "21 21 * * *"
   push:
-    branches: ["main"]
+    branches:
+      - main
+      - sway-main
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: "silverblue-setup"
+  IMAGE_NAME: "silverblue-setup__${{ github.ref_name }}"
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
   REGISTRY_USER: ${{ github.actor }}
   REGISTRY_PASSWORD: ${{ github.token }}
