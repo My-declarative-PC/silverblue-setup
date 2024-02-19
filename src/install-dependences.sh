@@ -1,15 +1,6 @@
 #! /bin/bash
 
 ### Packeges
-# Shell Extensions
-rpm-ostree install \
-    gnome-shell-extension-blur-my-shell \
-    gnome-shell-extension-caffeine \
-    gnome-shell-extension-gsconnect \
-    gnome-shell-extension-bubblemail \
-    gnome-shell-extension-pop-shell-shortcut-overrides \
-    gnome-shell-extension-user-theme
-
 # Fonts
 rpm-ostree install fira-code-fonts
 
@@ -18,15 +9,11 @@ rpm-ostree install \
     bluez-tools \
     bluez \
     btop \
-    bubblemail \
     cabextract \
     curl \
     distrobox \
     fish \
     fontconfig \
-    gnome-system-monitor \
-    gnome-themes-extra \
-    gnome-tweaks \
     gping \
     lazygit \
     libgda-sqlite \
@@ -35,7 +22,6 @@ rpm-ostree install \
     lm_sensors \
     make \
     NetworkManager-libnm-devel \
-    NetworkManager-openvpn-gnome \
     NetworkManager-openvpn \
     nodejs-bash-language-server \
     openvpn \
@@ -75,17 +61,6 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--nushell.sh
 # fastfetch
 /tmp/docker_src/install-dependences--fastfetch.sh
-
-### GNOME extensions from release
-# pano
-/tmp/docker_src/install-dependences--pano.sh
-# astra-monitor
-/tmp/docker_src/install-dependences--astra-monitor.sh
-# Bluetooth-Battery-Meter
-/tmp/docker_src/install-dependences--Bluetooth-Battery-Meter.sh
-
-### Build Pop-Shell
-/tmp/docker_src/install-dependences--pop_shell.sh
 
 # install 'Timse New Roman'
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
