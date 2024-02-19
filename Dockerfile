@@ -1,5 +1,5 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
-ARG SOURCE_IMAGE="${SOURCE_IMAGE:-silverblue}"
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
 RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
@@ -27,8 +27,6 @@ RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/
     cat /tmp/bashrc_base >> /etc/bashrc
 
 RUN systemctl enable rpm-ostreed-automatic.timer
-RUN systemctl enable dconf-update.service
-# RUN systemctl enable waydroid-container
 RUN systemctl enable docker.socket
 
 RUN rm -rf /var/lib/unbound \
