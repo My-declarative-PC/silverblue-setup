@@ -20,8 +20,8 @@ RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod -R +x /tmp/docker_src/*
 RUN /tmp/docker_src/install-dependences.sh
-RUN /tmp/docker_src/set-theme.sh
-RUN /tmp/docker_src/set-fonts.sh
+# RUN /tmp/docker_src/set-theme.sh
+# RUN /tmp/docker_src/set-fonts.sh
 
 RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
