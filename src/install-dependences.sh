@@ -62,4 +62,4 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--fastfetch.sh
 
 # # install 'Timse New Roman'
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
