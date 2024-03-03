@@ -27,6 +27,8 @@ rpm-ostree install \
     openvpn \
     papirus-icon-theme \
     podman \
+    kde-connect \
+    helix \
     qemu-kvm \
     qemu-img \
     qt5-qtgraphicaleffects \
@@ -34,13 +36,10 @@ rpm-ostree install \
     qt5-qtsvg \
     ripgrep \
     starship \
-    timeshift \
     tmux \
     vim \
     wezterm \
-    xorg-x11-font-utils \
     zoxide
-    # waydroid \
 
 # Docker
 rpm-ostree install \
@@ -63,4 +62,4 @@ rpm-ostree install \
 /tmp/docker_src/install-dependences--fastfetch.sh
 
 # # install 'Timse New Roman'
-# sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
