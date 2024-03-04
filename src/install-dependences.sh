@@ -1,13 +1,16 @@
 #! /bin/bash
 
+# Remove unnecessary packages
+rpm-ostree uninstall sway
+
 ### Packeges
 # Fonts
 rpm-ostree install fira-code-fonts
 
 # Other
 rpm-ostree install \
-    bluez-tools \
     bluez \
+    bluez-tools \
     btop \
     cabextract \
     curl \
@@ -15,9 +18,11 @@ rpm-ostree install \
     fish \
     fontconfig \
     gping \
+    helix \
+    kde-connect \
     lazygit \
-    libgda-sqlite \
     libgda \
+    libgda-sqlite \
     libgtop2-devel \
     lm_sensors \
     make \
@@ -26,16 +31,17 @@ rpm-ostree install \
     nodejs-bash-language-server \
     openvpn \
     papirus-icon-theme \
-    podman \
-    kde-connect \
-    helix \
-    qemu-kvm \
     qemu-img \
+    qemu-kvm \
     qt5-qtgraphicaleffects \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
     ripgrep \
+    sddm-wayland-sway \
     starship \
+    sway-config-upstream \
+    swayfx \
+    sway-wallpapers \
     tmux \
     vim \
     wezterm \
