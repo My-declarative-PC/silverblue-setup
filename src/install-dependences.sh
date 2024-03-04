@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Remove unnecessary packages
-rpm-ostree uninstall sway
+rpm-ostree uninstall sway sway-config-fedora
 
 ### Packeges
 # Fonts
@@ -39,12 +39,15 @@ rpm-ostree install \
     qt5-qtsvg \
     ripgrep \
     starship \
-    swayfx \
-    swayfx-wallpapers \
     tmux \
     vim \
     wezterm \
-    zoxide
+    zoxide# Other
+
+# SwayFX
+rpm-ostree install \
+    swayfx \
+    swayfx-wallpapers
 
 # Docker
 rpm-ostree install \
