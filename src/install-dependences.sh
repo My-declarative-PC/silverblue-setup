@@ -17,6 +17,7 @@ rpm-ostree install \
     distrobox \
     fish \
     fontconfig \
+    gh \
     gping \
     helix \
     kde-connect \
