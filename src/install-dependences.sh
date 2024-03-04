@@ -42,7 +42,7 @@ rpm-ostree install \
     tmux \
     vim \
     wezterm \
-    zoxide# Other
+    zoxide
 
 # SwayFX
 rpm-ostree install \
