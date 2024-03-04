@@ -38,11 +38,9 @@ rpm-ostree install \
     qt5-qtquickcontrols2 \
     qt5-qtsvg \
     ripgrep \
-    sddm-wayland-sway \
     starship \
-    sway-config-upstream \
     swayfx \
-    sway-wallpapers \
+    swayfx-wallpapers \
     tmux \
     vim \
     wezterm \
