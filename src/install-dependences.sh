@@ -17,6 +17,8 @@ rpm-ostree install \
     distrobox \
     fish \
     fontconfig \
+    fastfetch \
+    neofetch \
     gh \
     gping \
     helix \
