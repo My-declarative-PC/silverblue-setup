@@ -4,20 +4,6 @@
 # Fonts
 rpm-ostree install fira-code-fonts
 
-# SwayFX
-cp -r /etc/sway /etc/sway-tmp
-cp -r /usr/share/sway /usr/share/sway-tmp
-cp -r /usr/libexec/sway /usr/libexec/sway-tmp
-
-rpm-ostree uninstall sway sway-config-fedora
-rpm-ostree install \
-    swayfx \
-    swayfx-wallpapers
-
-cp -r /etc/sway-tmp /etc/sway
-cp -r /usr/share/sway-tmp /usr/share/sway
-cp -r /usr/libexec/sway-tmp /usr/libexec/sway
-
 # Other
 rpm-ostree install \
     bluez \
