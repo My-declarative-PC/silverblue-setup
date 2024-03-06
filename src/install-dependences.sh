@@ -2,7 +2,13 @@
 
 ### Packeges
 # Fonts
-rpm-ostree install fira-code-fonts
+rpm-ostree install        \
+    nerd-fonts            \
+    fira-code-fonts       \
+    xorg-x11-font-utils   \
+    fontawesome-fonts-all \
+    fontawesome-fonts-web \
+    fontawesome-6-brands-fonts
 
 # Other
 rpm-ostree install \
@@ -15,6 +21,7 @@ rpm-ostree install \
     fastfetch \
     fish \
     fontconfig \
+    eza \
     gh \
     gping \
     helix \
@@ -44,24 +51,19 @@ rpm-ostree install \
     zoxide
 
 # Docker
-rpm-ostree install \
-    docker-ce \
-    docker-ce-cli \
-    containerd.io \
+rpm-ostree install       \
+    docker-ce            \
+    docker-ce-cli        \
+    containerd.io        \
     docker-buildx-plugin \
     docker-compose-plugin
 
 ### Packeges from release
-# eza
-/tmp/docker_src/install-dependences--eza.sh
 # dust
 /tmp/docker_src/install-dependences--dust.sh
 # yazi
 /tmp/docker_src/install-dependences--yazi.sh
-# nushell
-/tmp/docker_src/install-dependences--nushell.sh
-# # fastfetch
-# /tmp/docker_src/install-dependences--fastfetch.sh
 
-# # install 'Timse New Roman'
-# sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# install 'Timse New Roman'
+rpm-ostree install --apply-live cabextract
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
