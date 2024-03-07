@@ -11,43 +11,46 @@ rpm-ostree install        \
     fontawesome-6-brands-fonts
 
 # Other
-rpm-ostree install \
-    bluez \
-    bluez-tools \
-    btop \
-    cabextract \
-    curl \
-    distrobox \
-    fastfetch \
-    fish \
-    fontconfig \
-    eza \
-    gh \
-    gping \
-    helix \
-    kde-connect \
-    lazygit \
-    libgda \
-    libgda-sqlite \
-    libgtop2-devel \
-    lm_sensors \
-    make \
-    neofetch \
-    NetworkManager-libnm-devel \
-    NetworkManager-openvpn \
+rpm-ostree install              \
+    bat                         \
+    bluez-tools                 \
+    bluez                       \
+    btop                        \
+    cabextract                  \
+    curl                        \
+    distrobox                   \
+    eza                         \
+    fastfetch                   \
+    fish                        \
+    fontconfig                  \
+    fzf                         \
+    gh                          \
+    gping                       \
+    helix                       \
+    kde-connect                 \
+    lazygit                     \
+    libgda-sqlite               \
+    libgda                      \
+    libgtop2-devel              \
+    lm_sensors                  \
+    make                        \
+    neofetch                    \
+    NetworkManager-libnm-devel  \
+    NetworkManager-openvpn      \
     nodejs-bash-language-server \
-    openvpn \
-    papirus-icon-theme \
-    qemu-img \
-    qemu-kvm \
-    qt5-qtgraphicaleffects \
-    qt5-qtquickcontrols2 \
-    qt5-qtsvg \
-    ripgrep \
-    starship \
-    tmux \
-    vim \
-    wezterm \
+    openvpn                     \
+    papirus-icon-theme          \
+    qemu-img                    \
+    qemu-kvm                    \
+    qt5-qtgraphicaleffects      \
+    qt5-qtquickcontrols2        \
+    qt5-qtsvg                   \
+    ripgrep                     \
+    starship                    \
+    tmux                        \
+    ueberzugpp                  \
+    vim                         \
+    wezterm                     \
     zoxide
 
 # Docker
