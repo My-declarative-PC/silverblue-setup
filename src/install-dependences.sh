@@ -48,6 +48,7 @@ rpm-ostree install              \
     ripgrep                     \
     starship                    \
     tmux                        \
+    ueberzugpp                  \
     vim                         \
     wezterm                     \
     zoxide
@@ -65,8 +66,6 @@ rpm-ostree install       \
 /tmp/docker_src/install-dependences--dust.sh
 # yazi
 /tmp/docker_src/install-dependences--yazi.sh
-# ueberzugpp
-sudo rpm -i https://download.opensuse.org/repositories/home:/justkidding/Fedora_${FEDORA_VERSION}/x86_64/ueberzugpp-2.9.4-4.1.x86_64.rpm
 # font 'Timse New Roman'
 rpm-ostree install --apply-live cabextract
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm

@@ -24,7 +24,10 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/r
     curl -L https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-${FEDORA_VERSION}/atim-lazygit-fedora-${FEDORA_VERSION}.repo                             > /etc/yum.repos.d/lazygit.copr.repo;    \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo                               > /etc/yum.repos.d/zoxide.copr.repo;     \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FEDORA_VERSION}/atim-gping-fedora-${FEDORA_VERSION}.repo                                 > /etc/yum.repos.d/gping.copr.repo;      \
-    curl -L https://download.docker.com/linux/fedora/docker-ce.repo                                                                                                   > /etc/yum.repos.d/docker.copr.repo;
+    curl -L https://download.opensuse.org/repositories/home:justkidding/Fedora_${FEDORA_VERSION}/home:justkidding.repo                                                > /etc/yum.repos.d/ueberzugpp.repo;      \
+    curl -L https://download.docker.com/linux/fedora/docker-ce.repo                                                                                                   > /etc/yum.repos.d/docker.copr.repo;     \
+    echo repo_gpgcheck=0    >> /etc/yum.repos.d/ueberzugpp.repo; \
+    echo enabled_metadata=1 >> /etc/yum.repos.d/ueberzugpp.repo;
 
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
 RUN rpm -ivh /ublue-os-update-services.noarch.rpm
