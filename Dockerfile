@@ -21,6 +21,7 @@ WORKDIR /tmp/npm_workdir
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo;    \
     curl -L https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-${FEDORA_VERSION}/che-nerd-fonts-fedora-${FEDORA_VERSION}.repo                         > /etc/yum.repos.d/nerd_fonts.copr.repo; \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo                           > /etc/yum.repos.d/starship.copr.repo;   \
+    curl -L https://copr.fedorainfracloud.org/coprs/lchh/libsixel/repo/fedora-${FEDORA_VERSION}/lchh-libsixel-fedora-${FEDORA_VERSION}.repo                           > /etc/yum.repos.d/libsixel.copr.repo;   \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/lazygit/repo/fedora-${FEDORA_VERSION}/atim-lazygit-fedora-${FEDORA_VERSION}.repo                             > /etc/yum.repos.d/lazygit.copr.repo;    \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/zoxide/repo/fedora-${FEDORA_VERSION}/atim-zoxide-fedora-${FEDORA_VERSION}.repo                               > /etc/yum.repos.d/zoxide.copr.repo;     \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FEDORA_VERSION}/atim-gping-fedora-${FEDORA_VERSION}.repo                                 > /etc/yum.repos.d/gping.copr.repo;      \

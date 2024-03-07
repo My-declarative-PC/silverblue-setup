@@ -70,8 +70,7 @@ rpm-ostree install --apply-live \
     opencv-imgcodecs            \
     opencv-imgproc              \
     opencv-videoio              \
-    libsixel-devel              \
-    libsixel-utils              \
+    libsixel                    \
     opencv-core                 \
     vips                        \
     tbb
