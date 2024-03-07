@@ -70,8 +70,9 @@ rpm-ostree install --apply-live \
     opencv-imgcodecs            \
     opencv-imgproc              \
     opencv-videoio              \
+    libsixel-devel              \
+    libsixel-utils              \
     opencv-core                 \
-    libsixel1                   \
     vips                        \
     tbb
 sudo rpm -i https://download.opensuse.org/repositories/home:/justkidding/Fedora_39/x86_64/ueberzugpp-2.9.4-4.1.x86_64.rpm
