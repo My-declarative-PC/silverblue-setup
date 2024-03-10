@@ -40,8 +40,9 @@ RUN chmod -R +x /tmp/docker_src/*; \
 RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
 
-RUN systemctl enable rpm-ostreed-automatic.timer; \
-    systemctl enable docker.socket
+RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
+    sudo systemctl enable waydroid-container;          \
+    sudo systemctl enable docker.socket
 
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
