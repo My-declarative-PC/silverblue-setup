@@ -61,8 +61,6 @@ rpm-ostree install              \
     intel-gpu-firmware \
     mesa-vulkan-drivers \
     dxvk-native \
-    wine-dxvk \
-    wine \
     libvkd3d \
     zoxide
 
