@@ -12,13 +12,18 @@ rpm-ostree install        \
 
 # Other
 rpm-ostree install              \
+    NetworkManager-libnm-devel  \
+    NetworkManager-openvpn      \
+    anime-games-launcher        \
+    anime-games-launcher        \
     bat                         \
-    bluez-tools                 \
     bluez                       \
+    bluez-tools                 \
     btop                        \
     cabextract                  \
     curl                        \
     distrobox                   \
+    dxvk-native                 \
     eza                         \
     fastfetch                   \
     fish                        \
@@ -26,43 +31,38 @@ rpm-ostree install              \
     fzf                         \
     gh                          \
     gping                       \
-    helix                       \
-    kde-connect                 \
-    scrcpy                      \
-    lazygit                     \
-    libgda-sqlite               \
-    libgda                      \
-    libgtop2-devel              \
-    lm_sensors                  \
-    make                        \
-    neofetch                    \
-    NetworkManager-libnm-devel  \
-    NetworkManager-openvpn      \
-    nodejs-bash-language-server \
-    openvpn                     \
-    papirus-icon-theme          \
-    grubby                      \
-    anime-games-launcher        \
     grub2-tools                 \
     grub2-tools-extra           \
+    grubby                      \
+    helix                       \
+    intel-gpu-firmware          \
+    kde-connect                 \
     kmod                        \
+    lazygit                     \
+    libgda                      \
+    libgda-sqlite               \
+    libgtop2-devel              \
+    libvkd3d                    \
+    lm_sensors                  \
+    make                        \
+    mesa-vulkan-drivers         \
+    neofetch                    \
+    nodejs-bash-language-server \
+    nvtop                       \
+    openvpn                     \
+    papirus-icon-theme          \
+    pcm                         \
     qemu-img                    \
     qemu-kvm                    \
     qt5-qtgraphicaleffects      \
     qt5-qtquickcontrols2        \
     qt5-qtsvg                   \
     ripgrep                     \
+    scrcpy                      \
     starship                    \
     tmux                        \
     vim                         \
     wezterm                     \
-    nvtop \
-    pcm \
-    intel-gpu-firmware \
-    mesa-vulkan-drivers \
-    dxvk-native \
-    libvkd3d \
-    anime-games-launcher \
     zoxide
 
 # Docker
