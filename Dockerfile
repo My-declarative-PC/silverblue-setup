@@ -45,8 +45,9 @@ RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/
 RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
     sudo systemctl enable docker.socket
 
-RUN rm -rf /var/lib/unbound \
-    rm -rf /tmp/* \
+RUN rm -rf /var/lib/unbound; \
+    rm -rf /var/tmp;         \
+    rm -rf /tmp/*;           \
     rm -rf /var
 
 RUN rpm-ostree cleanup -m && ostree container commit
