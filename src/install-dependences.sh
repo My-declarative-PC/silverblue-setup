@@ -62,6 +62,7 @@ rpm-ostree install              \
     mesa-vulkan-drivers \
     dxvk-native \
     libvkd3d \
+    anime-games-launcher \
     zoxide
 
 # Docker
