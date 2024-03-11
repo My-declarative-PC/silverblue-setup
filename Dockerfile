@@ -43,8 +43,8 @@ RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/
     cat /tmp/bashrc_base >> /etc/bashrc
 
 RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
-    sudo systemctl enable waydroid-container;          \
     sudo systemctl enable docker.socket
+
 RUN rm -rf /var/lib/unbound \
     rm -rf /tmp/* \
     rm -rf /var
