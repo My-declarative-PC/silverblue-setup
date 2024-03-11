@@ -41,6 +41,10 @@ rpm-ostree install              \
     nodejs-bash-language-server \
     openvpn                     \
     papirus-icon-theme          \
+    grubby                      \
+    grub2-tools                 \
+    grub2-tools-extra           \
+    kmod                        \
     qemu-img                    \
     qemu-kvm                    \
     qt5-qtgraphicaleffects      \
