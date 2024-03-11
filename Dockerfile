@@ -45,8 +45,6 @@ RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
     sudo systemctl enable waydroid-container;          \
     sudo systemctl enable docker.socket
 
-RUN grubby --update-kernel ALL --args selinux=0; \
-    grub2-mkconfig > /boot/grub2/grub.cfg
 RUN modprobe nfnetlink
 
 RUN rm -rf /var/lib/unbound \
