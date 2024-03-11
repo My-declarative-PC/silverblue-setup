@@ -57,6 +57,14 @@ rpm-ostree install              \
     vim                         \
     waydroid                    \
     wezterm                     \
+    nvtop \
+    pcm \
+    intel-gpu-firmware \
+    mesa-vulkan-drivers \
+    dxvk-native \
+    wine-dxvk \
+    wine \
+    libvkd3d \
     zoxide
 
 # Docker
