@@ -42,6 +42,7 @@ rpm-ostree install              \
     openvpn                     \
     papirus-icon-theme          \
     grubby                      \
+    anime-games-launcher        \
     grub2-tools                 \
     grub2-tools-extra           \
     kmod                        \
