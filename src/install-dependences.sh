@@ -15,7 +15,6 @@ rpm-ostree install              \
     NetworkManager-libnm-devel  \
     NetworkManager-openvpn      \
     anime-games-launcher        \
-    anime-games-launcher        \
     bat                         \
     bluez                       \
     bluez-tools                 \
@@ -46,12 +45,9 @@ rpm-ostree install              \
     lm_sensors                  \
     make                        \
     mesa-vulkan-drivers         \
-    neofetch                    \
     nodejs-bash-language-server \
-    nvtop                       \
     openvpn                     \
     papirus-icon-theme          \
-    pcm                         \
     qemu-img                    \
     qemu-kvm                    \
     qt5-qtgraphicaleffects      \
