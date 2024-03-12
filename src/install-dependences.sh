@@ -12,17 +12,12 @@ rpm-ostree install        \
 
 # Other
 rpm-ostree install              \
-    NetworkManager-libnm-devel  \
-    NetworkManager-openvpn      \
-    anime-games-launcher        \
     bat                         \
     bluez                       \
     bluez-tools                 \
     btop                        \
-    cabextract                  \
     curl                        \
     distrobox                   \
-    dxvk-native                 \
     eza                         \
     fastfetch                   \
     fish                        \
@@ -34,7 +29,6 @@ rpm-ostree install              \
     grub2-tools-extra           \
     grubby                      \
     helix                       \
-    intel-gpu-firmware          \
     kde-connect                 \
     kmod                        \
     lazygit                     \
@@ -44,7 +38,8 @@ rpm-ostree install              \
     libvkd3d                    \
     lm_sensors                  \
     make                        \
-    mesa-vulkan-drivers         \
+    NetworkManager-libnm-devel  \
+    NetworkManager-openvpn      \
     nodejs-bash-language-server \
     openvpn                     \
     papirus-icon-theme          \

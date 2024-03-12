@@ -18,8 +18,7 @@ COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
 COPY usr /usr
 WORKDIR /tmp/npm_workdir
 
-RUN curl -L https://copr.fedorainfracloud.org/coprs/retrozinndev/anime-games-launcher/repo/fedora-${FEDORA_VERSION}/retrozinndev-anime-games-launcher-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/anime_games_launcher.copr.repo; \
-    curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo               > /etc/yum.repos.d/wezterm.copr.repo;              \
+RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo               > /etc/yum.repos.d/wezterm.copr.repo;              \
     curl -L https://copr.fedorainfracloud.org/coprs/che/nerd-fonts/repo/fedora-${FEDORA_VERSION}/che-nerd-fonts-fedora-${FEDORA_VERSION}.repo                                       > /etc/yum.repos.d/nerd_fonts.copr.repo;           \
     curl -L https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-${FEDORA_VERSION}/atim-starship-fedora-${FEDORA_VERSION}.repo                                         > /etc/yum.repos.d/starship.copr.repo;             \
     curl -L https://copr.fedorainfracloud.org/coprs/lchh/libsixel/repo/fedora-${FEDORA_VERSION}/lchh-libsixel-fedora-${FEDORA_VERSION}.repo                                         > /etc/yum.repos.d/libsixel.copr.repo;             \
