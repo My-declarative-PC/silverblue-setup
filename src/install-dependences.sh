@@ -41,6 +41,7 @@ rpm-ostree install              \
     NetworkManager-libnm-devel  \
     NetworkManager-openvpn      \
     nodejs-bash-language-server \
+    openh264                    \
     openvpn                     \
     papirus-icon-theme          \
     qemu-img                    \
