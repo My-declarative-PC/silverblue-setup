@@ -55,6 +55,8 @@ rpm-ostree install              \
     tmux                        \
     vim                         \
     wezterm                     \
+    xdg-desktop-portal          \
+    xdg-desktop-portal-wlr      \
     zoxide
 
 # Docker
