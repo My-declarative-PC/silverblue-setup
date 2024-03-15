@@ -24,13 +24,10 @@ rpm-ostree install              \
     fontconfig                  \
     fzf                         \
     gh                          \
+    gnome-disk-utility          \
     gping                       \
-    grub2-tools                 \
-    grub2-tools-extra           \
-    grubby                      \
     helix                       \
     kde-connect                 \
-    kmod                        \
     lazygit                     \
     libgda                      \
     libgda-sqlite               \
