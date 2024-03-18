@@ -52,6 +52,7 @@ rpm-ostree install              \
     tmux                        \
     vim                         \
     wezterm                     \
+    waydrid                     \
     xdg-desktop-portal          \
     xdg-desktop-portal-wlr      \
     zoxide
