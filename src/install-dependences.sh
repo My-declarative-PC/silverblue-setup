@@ -13,8 +13,8 @@ rpm-ostree install        \
 # Other
 rpm-ostree install              \
     bat                         \
-    bluez                       \
     bluez-tools                 \
+    bluez                       \
     btop                        \
     curl                        \
     distrobox                   \
@@ -29,8 +29,8 @@ rpm-ostree install              \
     helix                       \
     kde-connect                 \
     lazygit                     \
-    libgda                      \
     libgda-sqlite               \
+    libgda                      \
     libgtop2-devel              \
     libvkd3d                    \
     lm_sensors                  \
@@ -51,10 +51,11 @@ rpm-ostree install              \
     starship                    \
     tmux                        \
     vim                         \
-    wezterm                     \
     waydroid                    \
-    xdg-desktop-portal          \
+    wezterm                     \
     xdg-desktop-portal-wlr      \
+    xdg-desktop-portal          \
+    yandex-disk-indicator       \
     zoxide
 
 # Docker
@@ -70,6 +71,8 @@ rpm-ostree install       \
 /tmp/docker_src/install-dependences--dust.sh
 # yazi
 /tmp/docker_src/install-dependences--yazi.sh
+# yandex-disk
+/tmp/docker_src/install-dependences--yandex-disk.sh
 # font 'Timse New Roman'
 rpm-ostree install --apply-live cabextract
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
