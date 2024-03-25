@@ -17,6 +17,7 @@ rpm-ostree install              \
     bluez                       \
     btop                        \
     curl                        \
+    difftastic                  \
     distrobox                   \
     eza                         \
     fastfetch                   \
