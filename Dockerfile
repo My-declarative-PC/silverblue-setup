@@ -39,7 +39,6 @@ RUN chmod -R +x /tmp/docker_src/*; \
     /tmp/docker_src/set-fonts.sh \
     /tmp/docker_src/set-theme.sh
 
-RUN sudo setfont /usr/share/fonts/kirsch/kirsch2x.pcf
 RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
     cat /tmp/bashrc_base >> /etc/bashrc
 
