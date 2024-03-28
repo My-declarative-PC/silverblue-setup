@@ -13,12 +13,13 @@ rpm-ostree install        \
 # Other
 rpm-ostree install              \
     bat                         \
-    bluez-tools                 \
     bluez                       \
+    bluez-tools                 \
     btop                        \
     curl                        \
     difftastic                  \
     distrobox                   \
+    dxvk-native                 \
     eza                         \
     fastfetch                   \
     fish                        \
@@ -30,8 +31,8 @@ rpm-ostree install              \
     helix                       \
     kde-connect                 \
     lazygit                     \
-    libgda-sqlite               \
     libgda                      \
+    libgda-sqlite               \
     libgtop2-devel              \
     libvkd3d                    \
     lm_sensors                  \
@@ -54,8 +55,13 @@ rpm-ostree install              \
     vim                         \
     waydroid                    \
     wezterm                     \
-    xdg-desktop-portal-wlr      \
+    wine                        \
+    wine-dxvk                   \
+    wine-dxvk-d3d9              \
     xdg-desktop-portal          \
+    xdg-desktop-portal-gtk      \
+    xdg-desktop-portal-kde      \
+    xdg-desktop-portal-wlr      \
     yandex-disk-indicator       \
     zoxide
 
