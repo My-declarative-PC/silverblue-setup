@@ -19,7 +19,6 @@ rpm-ostree install              \
     curl                        \
     difftastic                  \
     distrobox                   \
-    dxvk-native                 \
     eza                         \
     fastfetch                   \
     fish                        \
@@ -55,9 +54,6 @@ rpm-ostree install              \
     vim                         \
     waydroid                    \
     wezterm                     \
-    wine                        \
-    wine-dxvk                   \
-    wine-dxvk-d3d9              \
     xdg-desktop-portal          \
     xdg-desktop-portal-gtk      \
     xdg-desktop-portal-kde      \
