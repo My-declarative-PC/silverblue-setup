@@ -1,7 +1,6 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS sway_fx
-RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_VERSION}/swayfx-swayfx-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo; \
     sudo rpm-ostree uninstall sway sway-config-fedora; \
@@ -11,7 +10,6 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
-RUN export FEDORA_VERSION=$( cat /etc/*-release | grep VERSION_ID | sed 's/\([A-Z_]\+=\)\([0-9]\+\)/\2/g' )
 
 COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
 
