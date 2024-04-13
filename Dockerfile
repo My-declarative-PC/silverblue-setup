@@ -36,11 +36,13 @@ RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
 RUN chmod -R +x /tmp/docker_src/*; \
     /tmp/docker_src/install-dependences.sh; \
-    /tmp/docker_src/set-fonts.sh \
-    /tmp/docker_src/set-theme.sh
+    /tmp/docker_src/set-fonts.sh
+RUN /tmp/docker_src/set-theme.sh
 
 RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc -O /tmp/bashrc_base && \
-    cat /tmp/bashrc_base >> /etc/bashrc
+    cat /tmp/bashrc_base >> /etc/bashrc \
+    echo export GTK_THEME='Catppuccin' >> /etc/profile \
+    echo export EDITOR=hx >> /etc/profile
 
 RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
     sudo systemctl enable waydroid-container; \
