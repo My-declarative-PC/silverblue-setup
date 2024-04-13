@@ -45,7 +45,6 @@ rpm-ostree install              \
     papirus-icon-theme          \
     qemu-img                    \
     qemu-kvm                    \
-    qt5ct                       \
     qt5-qtgraphicaleffects      \
     qt5-qtquickcontrols2        \
     qt5-qtsvg                   \
