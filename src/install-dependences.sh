@@ -29,6 +29,7 @@ rpm-ostree install              \
     gping                       \
     helix                       \
     kde-connect                 \
+    kvantum                     \
     lazygit                     \
     libgda                      \
     libgda-sqlite               \
