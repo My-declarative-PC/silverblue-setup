@@ -1,8 +1,5 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
-
-RUN echo ${FEDORA_VERSION}
-
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS sway_fx
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_VERSION}/swayfx-swayfx-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo; \
