@@ -1,5 +1,8 @@
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
+
+RUN echo ${FEDORA_VERSION}
+
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS sway_fx
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_VERSION}/swayfx-swayfx-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo; \
@@ -15,8 +18,6 @@ COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
 
 COPY usr /usr
 WORKDIR /tmp/npm_workdir
-
-RUN echo ${FEDORA_VERSION}
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/repo/fedora-${FEDORA_VERSION}/wezfurlong-wezterm-nightly-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/wezterm.copr.repo;          \
     curl -L https://copr.fedorainfracloud.org/coprs/surfernsk/Personal_repos/repo/fedora-${FEDORA_VERSION}/surfernsk-Personal_repos-fedora-${FEDORA_VERSION}.repo     > /etc/yum.repos.d/YaDisk-indicator.copr.repo; \
