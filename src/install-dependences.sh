@@ -27,7 +27,7 @@ rpm-ostree install              \
     gh                          \
     gnome-disk-utility          \
     gping                       \
-    helix                       \
+    helix-git                   \
     kde-connect                 \
     kvantum                     \
     lazygit                     \
