@@ -3,8 +3,8 @@ ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS sway_fx
 
 RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_VERSION}/swayfx-swayfx-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo; \
-    sudo rpm-ostree uninstall sway sway-config-fedora; \
-    sudo rpm-ostree install --apply-live swayfx
+    rpm-ostree uninstall sway sway-config-fedora; \
+    rpm-ostree install --apply-live swayfx
 
 
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
@@ -43,11 +43,12 @@ RUN wget https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/
     echo export GTK_THEME='Catppuccin' >> /etc/profile; \
     echo export EDITOR=hx >> /etc/profile;
 
-RUN sudo systemctl enable rpm-ostreed-automatic.timer; \
-    sudo systemctl enable waydroid-container; \
-    sudo systemctl enable docker.socket
+RUN systemctl enable rpm-ostreed-automatic.timer; \
+    systemctl enable waydroid-container; \
+    systemctl enable docker.socket
 
-RUN rm -rf /var/lib/unbound; \
+RUN rpm-ostree cleanup;      \
+    rm -rf /var/lib/unbound; \
     rm -rf /var/tmp;         \
     rm -rf /tmp/*;           \
     rm -rf /var
