@@ -53,4 +53,6 @@ RUN rpm-ostree cleanup;      \
     rm -rf /tmp/*;           \
     rm -rf /var
 
+FROM base AS release
+
 RUN rpm-ostree cleanup -m && ostree container commit
