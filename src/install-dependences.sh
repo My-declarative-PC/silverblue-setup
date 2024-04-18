@@ -37,6 +37,7 @@ rpm-ostree install              \
     libvkd3d                    \
     lm_sensors                  \
     make                        \
+    mozilla-openh264            \
     NetworkManager-libnm-devel  \
     NetworkManager-openvpn      \
     nodejs-bash-language-server \
@@ -51,6 +52,8 @@ rpm-ostree install              \
     ripgrep                     \
     scrcpy                      \
     starship                    \
+    tlp                         \
+    tlp-rdw                     \
     tmux                        \
     vim                         \
     waydroid                    \
