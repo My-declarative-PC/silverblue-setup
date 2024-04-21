@@ -1,5 +1,9 @@
 #! /bin/bash
 
+### Remove packges
+rpm-ostree uninstall \
+    xorg-x11-server-Xwayland
+
 ### Packeges from repos
 # Fonts
 rpm-ostree install        \
