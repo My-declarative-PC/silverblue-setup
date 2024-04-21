@@ -1,9 +1,5 @@
 #! /bin/bash
 
-### Remove packges
-rpm-ostree uninstall \
-    xorg-x11-server-Xwayland
-
 ### Packeges from repos
 # Fonts
 rpm-ostree install        \
@@ -40,12 +36,9 @@ rpm-ostree install              \
     libgtop2-devel              \
     libvkd3d                    \
     lm_sensors                  \
-    make                        \
-    mozilla-openh264            \
     NetworkManager-libnm-devel  \
     NetworkManager-openvpn      \
     nodejs-bash-language-server \
-    openh264                    \
     openvpn                     \
     papirus-icon-theme          \
     qemu-img                    \
@@ -56,8 +49,6 @@ rpm-ostree install              \
     ripgrep                     \
     scrcpy                      \
     starship                    \
-    tlp                         \
-    tlp-rdw                     \
     tmux                        \
     vim                         \
     waydroid                    \
