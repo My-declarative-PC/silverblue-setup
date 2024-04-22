@@ -14,6 +14,7 @@ rpm-ostree install        \
 rpm-ostree install              \
     bat                         \
     bluez                       \
+    bluez-hcidump               \
     bluez-hid2hci               \
     bluez-tools                 \
     btop                        \
@@ -50,7 +51,7 @@ rpm-ostree install              \
     ripgrep                     \
     scrcpy                      \
     starship                    \
-    tmux                        \
+    tio                         \
     vim                         \
     waydroid                    \
     wezterm                     \
@@ -59,6 +60,7 @@ rpm-ostree install              \
     xdg-desktop-portal-kde      \
     xdg-desktop-portal-wlr      \
     yandex-disk-indicator       \
+    zellij                      \
     zoxide
 
 # Docker
