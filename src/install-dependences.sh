@@ -74,6 +74,8 @@ rpm-ostree install       \
 /tmp/docker_src/install-dependences--dust.sh
 # yazi
 /tmp/docker_src/install-dependences--yazi.sh
+# bluetuith
+/tmp/docker_src/install-dependences--bluetuith.sh
 # yandex-disk
 /tmp/docker_src/install-dependences--yandex-disk.sh
 # font 'Timse New Roman'
