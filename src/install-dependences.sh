@@ -14,6 +14,7 @@ rpm-ostree install        \
 rpm-ostree install              \
     bat                         \
     bluez                       \
+    bluez-hid2hci               \
     bluez-tools                 \
     btop                        \
     curl                        \
