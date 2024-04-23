@@ -14,7 +14,6 @@ rpm-ostree install        \
 rpm-ostree install              \
     bat                         \
     bluez                       \
-    bluez-hcidump               \
     bluez-hid2hci               \
     bluez-tools                 \
     btop                        \
