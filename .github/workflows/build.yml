@@ -59,7 +59,7 @@ jobs:
           containerfiles: Dockerfile
           image: ${{ env.IMAGE_NAME }}
           build-args: |
-            FEDORA_VERSION=39
+            FEDORA_VERSION=40
           layers: false
           oci: true
 
