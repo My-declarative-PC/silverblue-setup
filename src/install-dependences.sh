@@ -1,8 +1,10 @@
 #! /bin/bash
 
 ### Packeges from repos
-# RPM-fusion
-rpm-ostree install --apply-live rpmfusion-free-release rpmfusion-nonfree-release
+# RPM-fusionVV
+rpm-ostree install --apply-live \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # Fonts
 rpm-ostree install        \
