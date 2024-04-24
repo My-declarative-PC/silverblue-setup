@@ -10,6 +10,8 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${
 ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 FROM quay.io/fedora/fedora-${SOURCE_IMAGE}:${FEDORA_VERSION} AS base
+ARG FEDORA_VERSION="${FEDORA_VERSION:-latest}"
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 
 COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
 
