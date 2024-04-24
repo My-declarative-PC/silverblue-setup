@@ -28,8 +28,8 @@ RUN curl -L https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/r
     curl -L https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FEDORA_VERSION}/atim-gping-fedora-${FEDORA_VERSION}.repo                                 > /etc/yum.repos.d/gping.copr.repo;            \
     curl -L https://download.docker.com/linux/fedora/docker-ce.repo                                                                                                   > /etc/yum.repos.d/docker.copr.repo;
 
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /tmp/ublue-os-update-services.noarch.rpm
-RUN rpm -ivh /tmp/ublue-os-update-services.noarch.rpm
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /
+RUN rpm -ivh /ublue-os-update-services.noarch.rpm
 
 RUN mkdir -p /tmp/docker_src
 COPY src/* /tmp/docker_src/
