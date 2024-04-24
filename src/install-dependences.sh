@@ -1,6 +1,9 @@
 #! /bin/bash
 
 ### Packeges from repos
+# RPM-fusion
+rpm-ostree install --apply-live rpmfusion-free-release rpmfusion-nonfree-release
+
 # Fonts
 rpm-ostree install        \
     nerd-fonts            \
