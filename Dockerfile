@@ -49,7 +49,7 @@ RUN systemctl enable rpm-ostreed-automatic.timer; \
     systemctl enable waydroid-container; \
     systemctl enable docker.socket
 
-RUN rpm-ostree cleanup;      \
+RUN rpm-ostree cleanup -m;   \
     rm -rf /var/lib/unbound; \
     rm -rf /var/tmp;         \
     rm -rf /tmp/*;           \
