@@ -30,7 +30,9 @@ RUN curl -vL https://copr.fedorainfracloud.org/coprs/wezfurlong/wezterm-nightly/
     curl -vL https://copr.fedorainfracloud.org/coprs/zeno/scrcpy/repo/fedora-${FEDORA_VERSION}/zeno-scrcpy-fedora-${FEDORA_VERSION}.repo                               > /etc/yum.repos.d/scrcpy.copr.repo;           \
     curl -vL https://copr.fedorainfracloud.org/coprs/atim/gping/repo/fedora-${FEDORA_VERSION}/atim-gping-fedora-${FEDORA_VERSION}.repo                                 > /etc/yum.repos.d/gping.copr.repo;            \
     curl -vL https://download.docker.com/linux/fedora/docker-ce.repo                                                                                                   > /etc/yum.repos.d/docker-ce.repo;
-RUN sed "s/\$releasever/${FEDORA_VERSION}/g" /etc/yum.repos.d/docker-ce.repo > /etc/yum.repos.d/docker-ce.repo
+RUN sed "s/\$releasever/${FEDORA_VERSION}/g" /etc/yum.repos.d/docker-ce.repo > /etc/yum.repos.d/docker-ce_patched.repo; \
+    rm /etc/yum.repos.d/docker-ce.repo; \
+    echo /etc/yum.repos.d/docker-ce_patched.repo
 
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /tmp/ublue-os-update-services.noarch.rpm
 RUN rpm -ivh /tmp/ublue-os-update-services.noarch.rpm
