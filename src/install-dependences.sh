@@ -2,7 +2,7 @@
 
 ### Packeges from repos
 # RPM-fusionVV
-rpm-ostree install --apply-live \
+rpm-ostree install -y --apply-live \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
