@@ -25,14 +25,17 @@ for script in *; do
     # Check if the file is executable and a regular file
     if [ -x "$script" ] && [ -f "$script" ]; then
         # Run the script
-        echo '###########################################################'
-        echo "### Running $script ..."
+        echo '#################################################################'
+        echo "### Running $script ...                                       ###"
         ./"$script"
-        echo "### Finished running $script"
-        echo '###########################################################'
+        echo "### Finished running $script                                  ###"
+        echo '#################################################################'
     else
-        echo '###########################################################'
-        echo "#!!! Skipping $script (not executable or not a regular file)"
-        echo '###########################################################'
+        echo '#################################################################'
+        echo "#!!! Skipping $script (not executable or not a regular file) !!!#"
+        echo '#################################################################'
     fi
 done
+
+## clean up
+rpm-ostree uninstall cabextract xorg-x11-font-utils
