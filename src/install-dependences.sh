@@ -2,7 +2,7 @@
 
 ### Packeges from release
 # font 'Timse New Roman'
-rpm-ostree install --apply-live cabextract
+rpm-ostree install --apply-live cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 # Specify the directory containing setup scripts
@@ -16,16 +16,16 @@ fi
 
 # Change directory to the setup directory
 cd "$SETUP_DIR"
-
+mkdir -p /var/roothome/.local/share/wget
 # Loop through each file in the setup directory
 for script in *; do
     # Check if the file is executable and a regular file
     if [ -x "$script" ] && [ -f "$script" ]; then
         # Run the script
-        echo "Running $script ..."
+        echo "### Running $script ..."
         ./"$script"
-        echo "Finished running $script"
+        echo "### Finished running $script"
     else
-        echo "Skipping $script (not executable or not a regular file)"
+        echo "#!!! Skipping $script (not executable or not a regular file)"
     fi
 done
