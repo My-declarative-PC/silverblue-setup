@@ -6,7 +6,7 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS base
 
 COPY usr /usr
-COPY src/* /tmp/docker_src/
+COPY src /tmp/docker_src
 RUN chmod -R +x /tmp/docker_src/*
 RUN tree /tmp/docker_src/
 
