@@ -3,6 +3,9 @@
 mkdir -p /tmp/yandex-disk
 
 cd /tmp/yandex-disk
-wget http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm -O yandex-disk.rpm
+curl -vL http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm -o yandex-disk.rpm
 
 rpm -ivh yandex-disk.rpm
+
+cd /
+rm -rf /tmp/yandex-disk
