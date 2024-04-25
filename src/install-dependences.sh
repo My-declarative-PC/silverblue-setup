@@ -26,9 +26,9 @@ for script in *; do
     if [ -x "$script" ] && [ -f "$script" ]; then
         # Run the script
         echo '#################################################################'
-        echo "### Running $script ...                                       ###"
+        echo "### Running $script ..."
         ./"$script"
-        echo "### Finished running $script                                  ###"
+        echo "### Finished running $script"
         echo '#################################################################'
     else
         echo '#################################################################'
@@ -36,6 +36,3 @@ for script in *; do
         echo '#################################################################'
     fi
 done
-
-## clean up
-rpm-ostree uninstall cabextract xorg-x11-font-utils
