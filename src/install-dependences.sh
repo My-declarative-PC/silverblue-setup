@@ -6,13 +6,17 @@ rpm-ostree install -y --apply-live \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+
 ### Packeges from release
 # set up requirements
 rpm-ostree install --apply-live cabextract xorg-x11-font-utils curl jq
 mkdir -p /var/roothome/.local/share/wget
 
+## WezTerm
+rpm -i https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora39.rpm
+
 ## font 'Timse New Roman'
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 ## Install all packegase from `GitHub`
 # Specify the directory containing setup scripts
