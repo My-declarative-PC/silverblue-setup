@@ -8,7 +8,7 @@ FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS base
 COPY usr /usr
 COPY src /tmp/docker_src
 RUN chmod -R +x /tmp/docker_src/*
-RUN tree /tmp/docker_src/
+RUN /tmp/docker_src/install-dependences.sh
 
 RUN rpm-ostree cleanup -m;   \
     rm -rf /var/lib/unbound; \
