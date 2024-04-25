@@ -2,7 +2,7 @@
 
 ### Packeges from release
 # set up requirements
-rpm-ostree install --apply-live cabextract xorg-x11-font-utils curl
+rpm-ostree install --apply-live cabextract xorg-x11-font-utils curl wget
 mkdir -p /var/roothome/.local/share/wget
 
 ## font 'Timse New Roman'
