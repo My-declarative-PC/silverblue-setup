@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#
-##
-### Packeges from repos
-##
-#
+  #
+ ###
+##### Packeges from repos
+ ###
+  #
 
 ### RPM-fusion
 rpm-ostree install -y --apply-live \
@@ -12,22 +12,29 @@ rpm-ostree install -y --apply-live \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 
-#
-##
-### Packeges from releases
-##
-#
+  #
+ ###
+##### Packeges from releases
+ ###
+  #
 
 # set up requirements
 rpm-ostree install --apply-live curl jq
-mkdir -p /var/roothome/.local/share/wget
 
 ### WezTerm
+echo '#################################################################'
+echo '### Running installing WezTerm ...'
 rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(rpm -E %fedora).rpm || \
 rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(($(rpm -E %fedora) - 1)).rpm
+echo '### Finished running installing WezTerm'
+echo '#################################################################'
 
 ### font 'Timse New Roman'
+echo '#################################################################'
+echo '### Running installing font "Timse New Roman" ...'
 rpm-ostree install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+echo '### Finished running installing font "Timse New Roman"'
+echo '#################################################################'
 
 ### Install all packegase from `GitHub-releases`
 # Specify the directory containing setup scripts
