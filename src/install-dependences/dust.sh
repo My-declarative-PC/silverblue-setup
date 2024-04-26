@@ -10,7 +10,7 @@ URL=https://github.com/bootandy/dust/releases/download/v${VERSION}/dust-v${VERSI
 echo "<<< ${URL} >>>"
 curl -fL $URL -o dust.tar.gz
 
-tar -xvfP dust.tar.gz
+tar -xvf dust.tar.gz
 rm *gz
 cd du*
 
