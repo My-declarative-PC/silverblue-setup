@@ -12,7 +12,7 @@ URL=https://github.com/helix-editor/helix/releases/download/${VERSION}/helix-${V
 echo "<<< ${URL} >>>"
 curl -fL $URL -o helix.tar.gz
 
-tar -xvf helix.tar.gz
+tar --same-permissions --extract --file=helix.tar.gz
 rm *gz
 cd he*
 
