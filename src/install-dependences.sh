@@ -2,18 +2,6 @@
 
   #
  ###
-##### Packeges from repos
- ###
-  #
-
-### RPM-fusion
-rpm-ostree install -y --apply-live \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-
-  #
- ###
 ##### Packeges from releases
  ###
   #
@@ -64,3 +52,31 @@ for script in *; do
         echo '#################################################################'
     fi
 done
+
+
+  #
+ ###
+##### Packeges from repos
+ ###
+  #
+
+### RPM-fusion
+rpm-ostree install -y --apply-live \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+### CLI tools
+rpm-ostree install -y \
+  bat                 \
+  distrobox           \
+  eza                 \
+  fastfetch           \
+  fd                  \
+  fish                \
+  fzf                 \
+  gh                  \
+  lazygit             \
+  ripgrep             \
+  sd                  \
+  zoxide
+
