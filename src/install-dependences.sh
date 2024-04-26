@@ -1,24 +1,35 @@
 #!/bin/bash
 
+#
+##
 ### Packeges from repos
-# RPM-fusion
+##
+#
+
+### RPM-fusion
 rpm-ostree install -y --apply-live \
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 
-### Packeges from release
+#
+##
+### Packeges from releases
+##
+#
+
 # set up requirements
-rpm-ostree install --apply-live cabextract xorg-x11-font-utils curl jq
+rpm-ostree install --apply-live curl jq
 mkdir -p /var/roothome/.local/share/wget
 
-## WezTerm
-rpm -i https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora39.rpm
+### WezTerm
+rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(rpm -E %fedora).rpm || \
+rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(($(rpm -E %fedora) - 1)).rpm
 
-## font 'Timse New Roman'
-rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+### font 'Timse New Roman'
+rpm-ostree install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-## Install all packegase from `GitHub`
+### Install all packegase from `GitHub-releases`
 # Specify the directory containing setup scripts
 SETUP_DIR="/tmp/docker_src/install-dependences"
 
