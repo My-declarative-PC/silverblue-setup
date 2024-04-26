@@ -10,7 +10,7 @@ URL=https://github.com/darkhz/bluetuith/releases/download/v${VERSION}/bluetuith_
 echo "<<< ${URL} >>>"
 curl -fL $URL -o bluetuith.tar.gz
 
-tar -xf bluetuith.tar.gz
+tar -xvfP bluetuith.tar.gz
 rm *gz
 
 mv bluetuith /usr/bin
