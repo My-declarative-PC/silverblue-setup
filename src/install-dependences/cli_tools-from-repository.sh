@@ -3,6 +3,7 @@
 ### CLI tools
 rpm-ostree install -y \
   bat                 \
+  btop                \
   distrobox           \
   eza                 \
   fastfetch           \
