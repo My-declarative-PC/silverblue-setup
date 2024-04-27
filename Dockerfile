@@ -26,6 +26,7 @@ RUN /tmp/docker_src/install-dependences.sh
 RUN curl -Lf -o /tmp/bashrc_base https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc && \
     cat /tmp/bashrc_base >> /etc/bashrc; \
     echo export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" >> /etc/profile; \
+    echo export HELIX_RUNTIME=/usr/lib64/helix/runtime            >> /etc/profile; \
     echo export GTK_THEME='Catppuccin'                            >> /etc/profile; \
     echo export EDITOR=hx                                         >> /etc/profile;
 

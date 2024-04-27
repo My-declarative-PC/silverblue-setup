@@ -17,6 +17,7 @@ rm *gz
 cd he*
 
 mv -f ./hx /usr/bin/hx
+mv -f ./runtime /usr/lib64/helix/runtime
 
 cd /
 rm -rf $TMP_PATH
