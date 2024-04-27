@@ -2,27 +2,23 @@
 
   #
  ###
-##### Packeges from releases
+##### RPM-fusion
+ ###
+  #
+
+rpm-ostree install -y --apply-live \
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+
+  #
+ ###
+##### Packeges
  ###
   #
 
 # set up requirements
 rpm-ostree install --apply-live curl jq
-
-### WezTerm
-echo '#################################################################'
-echo '### Running installing WezTerm ...'
-rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(rpm -E %fedora).rpm || \
-rpm-ostree install https://github.com/wez/wezterm/releases/download/nightly/wezterm-nightly-fedora$(($(rpm -E %fedora) - 1)).rpm
-echo '### Finished running installing WezTerm'
-echo '#################################################################'
-
-### font 'Timse New Roman'
-echo '#################################################################'
-echo '### Running installing font "Timse New Roman" ...'
-rpm-ostree install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-echo '### Finished running installing font "Timse New Roman"'
-echo '#################################################################'
 
 ### Install all packegase from `GitHub-releases`
 # Specify the directory containing setup scripts
@@ -52,30 +48,3 @@ for script in *; do
         echo '#################################################################'
     fi
 done
-
-
-  #
- ###
-##### Packeges from repos
- ###
-  #
-
-### RPM-fusion
-rpm-ostree install -y --apply-live \
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-
-### CLI tools
-rpm-ostree install -y \
-  bat                 \
-  distrobox           \
-  eza                 \
-  fastfetch           \
-  fd-find             \
-  fish                \
-  fzf                 \
-  gh                  \
-  ripgrep             \
-  sd                  \
-  zoxide
-
