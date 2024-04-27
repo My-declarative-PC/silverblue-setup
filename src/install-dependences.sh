@@ -71,11 +71,10 @@ rpm-ostree install -y \
   distrobox           \
   eza                 \
   fastfetch           \
-  fd                  \
+  fd-find             \
   fish                \
   fzf                 \
   gh                  \
-  lazygit             \
   ripgrep             \
   sd                  \
   zoxide
