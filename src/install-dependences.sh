@@ -1,4 +1,6 @@
 #!/bin/bash
+export ACCENT=Mauve
+export FLAVOR=Mocha
 
   #
  ###
