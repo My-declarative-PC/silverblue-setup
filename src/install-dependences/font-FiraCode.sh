@@ -10,5 +10,5 @@ tar -xf FiraCode.tar.xz
 mkdir -p /usr/share/fonts/FiraCode
 mv *.ttf /usr/share/fonts/FiraCode
 
-cd
+cd /
 rm -rf /tmp/fonts_FiraCode
