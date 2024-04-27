@@ -7,7 +7,7 @@ mkdir -p $TMP_PATH
 
 cd $TMP_PATH
 URL=https://api.github.com/repos/starship/${PACKAGE_NAME}/tags
-VERSION=$(curl -fL $URL | jq 'max_by(.name).name' | sed 's/.*v\(.*\)".*/\1/g')
+VERSION=$(curl -fL $URL | sed 's/\(.*\)\(v\)\(.*".*\)/\1\3/g' | jq 'max_by(.name|split(".")|map(tonumber)).name' | xargs)
 URL=https://github.com/starship/starship/releases/download/v${VERSION}/${PACKAGE_NAME}-x86_64-unknown-linux-gnu.tar.gz
 echo "<<< ${URL} >>>"
 curl -fL $URL -o ${PACKAGE_NAME}.tar.gz
