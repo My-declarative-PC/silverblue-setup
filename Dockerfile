@@ -5,7 +5,7 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS sway_fx
 
-RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_VERSION}/swayfx-swayfx-fedora-${FEDORA_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo
+RUN curl -L https://copr.fedorainfracloud.org/coprs/swayfx/swayfx/repo/fedora-${FEDORA_MAJOR_VERSION}/swayfx-swayfx-fedora-${FEDORA_MAJOR_VERSION}.repo > /etc/yum.repos.d/swayfx.copr.repo
 RUN rpm-ostree uninstall sway sway-config-fedora
 RUN rpm-ostree install --apply-live swayfx
 
