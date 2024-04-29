@@ -12,5 +12,6 @@ rpm-ostree install -y \
   fzf                 \
   gh                  \
   ripgrep             \
+  screen              \
   sd                  \
   zoxide
