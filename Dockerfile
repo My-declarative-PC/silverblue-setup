@@ -22,7 +22,6 @@ COPY usr /usr
 COPY src /tmp/docker_src
 
 COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
-RUN sway -v && echo yes!!! || echo no!!!
 
 RUN chmod -R +x /tmp/docker_src/*
 RUN /tmp/docker_src/install-dependences.sh
