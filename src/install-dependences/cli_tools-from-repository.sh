@@ -14,4 +14,5 @@ rpm-ostree install -y \
   ripgrep             \
   screen              \
   sd                  \
+  wlrctl              \
   zoxide
