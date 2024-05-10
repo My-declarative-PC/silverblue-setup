@@ -1,3 +1,10 @@
+FROM nixos/nix as nix_builder
+
+WORKDIR /build
+RUN nix --extra-experimental-features nix-command --extra-experimental-features flakes build git+https://codeberg.org/QuincePie/matcha
+
+#==================================================================================================
+
 ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
 ARG SOURCE_ORG="${SOURCE_ORG:-fedora-ostree-desktops}"
 ARG BASE_IMAGE="quay.io/${SOURCE_ORG}/${SOURCE_IMAGE}"
@@ -22,6 +29,7 @@ COPY usr /usr
 COPY src /tmp/docker_src
 
 COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
+COPY --from=nix_builder /build/result/bin/matcha /usr/bin/matcha
 
 RUN chmod -R +x /tmp/docker_src/*
 RUN /tmp/docker_src/install-dependences.sh
