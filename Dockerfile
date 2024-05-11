@@ -18,12 +18,10 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS matcha_builder
 
-WORKDIR /build
-RUN cd /build
 RUN rpm-ostree install --apply-live clang meson cmake wayland-devel wayland-protocols-devel
-RUN git clone https://codeberg.org/QuincePie/matcha.git
-RUN cd matcha
-RUN meson setup build --buildtype=release -Dprefix=/usr
+RUN git clone https://codeberg.org/QuincePie/matcha.git /build
+WORKDIR /build
+RUN meson setup      build --buildtype=release -Dprefix=/usr
 RUN meson compile -C build
 RUN meson install -C build
 
