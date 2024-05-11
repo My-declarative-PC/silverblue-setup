@@ -11,10 +11,21 @@ RUN rpm-ostree install --apply-live swayfx
 
 #==================================================================================================
 
-FROM nixos/nix AS nix_builder
+ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
+ARG SOURCE_ORG="${SOURCE_ORG:-fedora-ostree-desktops}"
+ARG BASE_IMAGE="quay.io/${SOURCE_ORG}/${SOURCE_IMAGE}"
+ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+
+FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS matcha_builder
 
 WORKDIR /build
-RUN nix --extra-experimental-features nix-command --extra-experimental-features flakes build git+https://codeberg.org/QuincePie/matcha
+RUN cd /build
+RUN rpm-ostree install --apply-live clang meson cmake wayland-devel wayland-protocols-devel
+RUN git clone https://codeberg.org/QuincePie/matcha.git
+RUN cd matcha
+RUN meson setup build --buildtype=release -Dprefix=/usr
+RUN meson compile -C build
+RUN meson install -C build
 
 #==================================================================================================
 
@@ -28,8 +39,8 @@ FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS base
 COPY usr /usr
 COPY src /tmp/docker_src
 
-COPY --from=sway_fx /usr/bin/sway /usr/bin/sway
-COPY --from=nix_builder /build/result/bin/matcha /usr/bin/matcha
+COPY --from=sway_fx        /usr/bin/sway   /usr/bin/sway
+COPY --from=matcha_builder /usr/bin/matcha /usr/bin/matcha
 
 RUN chmod -R +x /tmp/docker_src/*
 RUN /tmp/docker_src/install-dependences.sh
