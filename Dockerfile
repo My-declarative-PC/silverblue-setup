@@ -11,14 +11,9 @@ RUN rpm-ostree install --apply-live swayfx
 
 #==================================================================================================
 
-ARG SOURCE_IMAGE="${SOURCE_IMAGE:-sericea}"
-ARG SOURCE_ORG="${SOURCE_ORG:-fedora-ostree-desktops}"
-ARG BASE_IMAGE="quay.io/${SOURCE_ORG}/${SOURCE_IMAGE}"
-ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
+FROM quay.io/fedora/fedora AS matcha_builder
 
-FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS matcha_builder
-
-RUN rpm-ostree install --apply-live binutils clang meson cmake wayland-devel wayland-protocols-devel
+RUN dnf -y install binutils clang meson cmake wayland-devel wayland-protocols-devel git
 RUN git clone https://codeberg.org/QuincePie/matcha.git /build
 WORKDIR /build
 RUN meson setup      build --buildtype=release -Dprefix=/usr
