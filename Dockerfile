@@ -29,14 +29,14 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-40}"
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS config
 
-RUN echo export MATCHA_WAYBAR_OFF='\'{"text": "off", "alt": "off", "tooltip": "off", "class": "off", "percentage": 0 }\'' >> /etc/profile
-RUN echo export MATCHA_WAYBAR_ON='\'{ "text": "on",  "alt": "on",  "tooltip": "on",  "class": "on",  "percentage": 0 }\'' >> /etc/profile
+RUN echo export MATCHA_WAYBAR_OFF=\'\'{"text": "off", "alt": "off", "tooltip": "off", "class": "off", "percentage": 0 }\'\' >> /etc/profile
+RUN echo export MATCHA_WAYBAR_ON=\'\'{ "text": "on",  "alt": "on",  "tooltip": "on",  "class": "on",  "percentage": 0 }\'\' >> /etc/profile
 RUN curl -Lf -o /tmp/bashrc_base https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc
-RUN cat /tmp/bashrc_base                                          >> /etc/bashrc
-RUN echo export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" >> /etc/profile
-RUN echo export HELIX_RUNTIME=/usr/lib64/helix/runtime            >> /etc/profile
-RUN echo export GTK_THEME='Catppuccin'                            >> /etc/profile
-RUN echo export EDITOR=hx                                         >> /etc/profile
+RUN cat /tmp/bashrc_base                                           >> /etc/bashrc
+RUN echo export SSH_AUTH_SOCK="\$XDG_RUNTIME_DIR/ssh-agent.socket" >> /etc/profile
+RUN echo export HELIX_RUNTIME=/usr/lib64/helix/runtime             >> /etc/profile
+RUN echo export GTK_THEME=\'Catppuccin\'                           >> /etc/profile
+RUN echo export EDITOR=hx                                          >> /etc/profile
 
 #==================================================================================================
 
