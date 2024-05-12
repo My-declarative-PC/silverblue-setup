@@ -40,6 +40,8 @@ RUN /tmp/docker_src/install-dependences.sh
 
 RUN curl -Lf -o /tmp/bashrc_base https://raw.githubusercontent.com/My-declarative-PC/dotfiles/base/bash/bashrc && \
     systemctl enable docker.socket; \
+    echo export MATCHA_WAYBAR_OFF='{"text": "off", "alt": "off", "tooltip": "off", "class": "off", "percentage": 0 }' >> /etc/profile; \
+    echo export MATCHA_WAYBAR_ON='{ "text": "on",  "alt": "on",  "tooltip": "on",  "class": "on",  "percentage": 0 }' >> /etc/profile; \
     cat /tmp/bashrc_base                                          >> /etc/bashrc;  \
     echo export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" >> /etc/profile; \
     echo export HELIX_RUNTIME=/usr/lib64/helix/runtime            >> /etc/profile; \
