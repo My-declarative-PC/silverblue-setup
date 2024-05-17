@@ -13,9 +13,8 @@ curl -fL $URL -o fzf.tar.gz
 
 tar --same-permissions --extract --file=fzf.tar.gz
 rm *gz
-cd he*
 
-mv -f ./hx /usr/bin/hx
+mv -f ./fzf /usr/bin/fzf
 mv -f ./runtime /usr/lib64/fzf/runtime
 
 cd /
