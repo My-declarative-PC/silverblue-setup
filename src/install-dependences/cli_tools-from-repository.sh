@@ -9,7 +9,6 @@ rpm-ostree install -y \
   fastfetch           \
   fd-find             \
   fish                \
-  fzf                 \
   gh                  \
   ripgrep             \
   screen              \
