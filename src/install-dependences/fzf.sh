@@ -15,7 +15,6 @@ tar --same-permissions --extract --file=fzf.tar.gz
 rm *gz
 
 mv -f ./fzf /usr/bin/fzf
-mv -f ./runtime /usr/lib64/fzf/runtime
 
 cd /
 rm -rf $TMP_PATH
